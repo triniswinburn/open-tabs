@@ -1,0 +1,1045 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open tabs</title>
+<meta name="description" content="Open tabs: a conversation game for your team, played from anywhere.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CjxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE1IiBmaWxsPSIjOEE1Q0ZGIi8+CjxyZWN0IHg9IjI0IiB5PSIxMyIgd2lkdGg9IjI4IiBoZWlnaHQ9IjE5IiByeD0iNiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIuMzUiLz4KPHJlY3QgeD0iMTgiIHk9IjIwIiB3aWR0aD0iMjgiIGhlaWdodD0iMTkiIHJ4PSI2IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii42NSIvPgo8cmVjdCB4PSIxMiIgeT0iMjgiIHdpZHRoPSIyOCIgaGVpZ2h0PSIyMiIgcng9IjciIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==">
+<link rel="icon" type="image/png" sizes="64x64" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAFH0lEQVR4nO2aX2wURRzHPzN3vf6115ZWioU0KaCpqNGQEMWHGh+QGCPyUB5oefRJo8XEWhKCp2gMhZCIGh98KTGgQiJpYowJDxojsSEEE7EGgSZatNLS2n9w12vvdnzYVq7X+9PdzuxS8JPcw+3u/H7f+e7M7OzOCBbBiWYV6C/gyaRkm4DNQANQCRQsprwHxBX8I+AXBN9bklMdR0XvYgqKXCcPN6viRIhXEbwG1GiR6hWCbxW0v/GpOJf7siwcbFU7FBwG6rSL846kgI+TcfZ2nBTjmS5YYIBCic5W3hSwL9P5ZUofAZ5pPyr60k/Mq2AkomTxFT4TsMM7bZ4xYCm2dhwTF1IPytQ/JX28e4dWHuA+KTh9oEWtTj34XwuY7fNfeK/Lc3qicZoiJ8U0zLaAw82qeHbAuxt4vLSQt+f+SICZItpY3qO9IxTsfm+nagCQJ5pVQCh2+y3KY0IByVsAonOXakLxnc+C/GAmGKdWotjmtxKfKEiEeEECT/itxDcEzwWBtZ7kElCxEsI1UFgMMrC0eFYSYjdgdBAmR1yHWRsEwkuTkp9gCNY0QlGJvpgyAKVh+zcxAgOXQSnHYeolENInayFC6K98OuUrYJW7dhyW+a9ZGhUrzVZ+jnANlFU6L2fcgLCHXxEqa52XMW5AYbHpDLcoLnNexrgBSx3tnRAIOi/jokhuZADqN0DderhnhbtmmUoyAbFJuN4PY0N6NKai1YCiMtj0LJRX64sZCNqDW1kljF6DP3pBWfria+sCMqC/8ulU1kL9g3pjajOgfoPZys9RuQrCGvNoM6Dufl2R8lO9Rl8sbQa4mYS4pbRCXyxtBgSzrRE5n5/nJdvjzko6j2V8HpCYMZ3hFvGo8zJLegyWlMPGLdDwqN0vpUs7LQsS0xCdhOi4q7c6AMaHnZdxbcADm2DrixAqchvhFlLacUJFUBaGkb9tQ5wwdRPGBl3kdl7ErvzzL+upfDrBENSszjGmZGDqJly96K7lOG4BJeX2nTe5aigDULUKhq6SdRC1knafHx+277zbbuPYgI1bzNz5dAoKQQoYu575/G9n9eRx3AUaHtOTeDFk+5bgdHzIhWMDKu7VlzwfhVm+JN0Y1ZfDsQFeNP85sk14/rykL4fxiZBuJoah/1d98ZaVARPDcPZrd1PebGj/IqSbxIy98PHXZfvO66w8LAMDvvnEbPxl1QVM8L8BfgvwG8cGuHnndst0zHwOxwYM9ZuQkRkT6wDpODag9wcTMjJz5bz5HK4MuH7VhJT5xKNw/rT5PI4NsJLQfcTenWEMZT//Y5MGc8zi6ikweg2O74eRAd1y7DvffQQu5dzkrg/R2arGcLlNJhCER56Cxs1QXZf99TUf01O2qX0/2c3eizs/S1x0tqqfgYc9S3l7MSiBBXvo7yKuSCH4ym8VvqE4IxNJvgQ0fmVbPliCbrnnuBgFTvotxgcGp9bRIwGSQfYCcZ8FeYpSHIxEhCUB9nSJ31G877coD+mPFfARpEyEiqrYB/T4Jsk7lFC0RbrEFKQY8MoHIk6Q7YCB+d3tg4J3Xj8mTs39nzcVbu8S1yzFVu5QExR8HltHJPXYgneBjmPigrTYjOCiZ8rMowQciK2jJRIR8zbZZV3jPdKiymOwXwheAjzc76mdfqFoS232qeRd5D60U220JJ3A09qlmWUQOBQN8uHcgJeJRa/yH9ilGoViO9AEPARUAR6uFOZkGhgV9nvNGaXojq7nx/Tmnol/AWfxU5V5dWSPAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAABmJLR0QA/wD/AP+gvaeTAAAIzElEQVR4nO3dzW9c5RXH8d+dd7+N7Rk747cYJ3bBkERtSNIKFIpYlBTEBrWbSmxQl/wTLNpNuui6y0qtkEolpEpUSG3VllYtgVRASCJHdYjtRLYzsT1+HY/tGU8XU1kGfByPfeec517/PvvwHI++3Llz595nvKtvVEG0l4j1AOQuxkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkEixkGimPUA2jwPiSYkmhCLwYvC86wHArYr2K6gvInSGipl62l2OS5xRKJoyyDdheY2RKLW08hKa1iZx2Ie5S3rUY5DHF4E2V5kehGNW49yAKkWpFrQdRKFWcw9MD6QhDyO5jR6h5FIWc9RJ89DphfpLszcxWrBbIwwn5Bm+jD4TPDK2BGL4+Qosv12A5it3GAnBi1fVh+dGEQsjoeTgPpuwuE8cmT7Q1JGTaYXuScM1g1hHM1pdJ+0HsJvmV50nNBeNGxxRKLoG3Hi6oXvcqeQbFZdMWxxZPsQT1oP0RiRCHpO6a6oulqDRaLI9FoP0UjNabRl9JYLVRzt3U5f/fRF96DeWqGKI521nqDxkk1oalNaKzxxRKJ6r5ottXeW8MSRag7nh5RvYhx1SzRZT6AlkUJU5cp2eOLQeb0cofNxPTxxeOH5Ux5P50NZeF7RY3LCoSk8cZDvAvxGHY2hM4eOHFo7kGhCWwbN7dYzAcD/bwgtLmO1gNKa9TRHEMg4OnswdBY9p79yEpps1v5ean+1ewZKa5i7j/lpbFesB6pfwOJo7cTZF9A1YD3HgaVaMDCK3ClMj2Nh2nqaOgUnDg/D38Ho9wL5qSSexBNn0JnDxE1UHLit/ICC8UpHonj2B3j6uUCWsSPdhScvBumOggC82F4EF66gb8R6Dj+kWvHUd5FqsZ7jYAIQx7nvIzdkPYR/4ikMn0csCA/RuB5H/5MYfMZ6CL8lmjB0znqIA3A6jkQKZy5bD9EYbVnte/4Owek4Rp4N8CNJj5U75frJqbtxxBMYPGM9RCNFougdth5iX+7G0fetYJy1HUW2z+lDo7tx9Jy2nkCBh46c9QwyR+PwIiF/yGBHJ+OoV0v7cbmzq7nd3XdPR+NoTltPoCjVaj2BwNE44gnrCRQ5+8c6GocX9gfXdjvMH6uyV4ejcRxCddt6AkUVlVuHwhNHEG+1OrTypsYq4YmjUjbYGMlEeVNpl8HwxFGtKv3/ZK64rLSQoxcTIlEkUohE67vaEYsj4dM9xtVtbFdQKaPq3tFoRWvzSYfiiMUxfB5DZzEwis6cE3cE1o5GG0Wsr2Fz3XoaAMB2BSsLSms5EUc6i0uv4sxlt54tAOB5iCcRT6K1E1ubWC2guGJ8ZlOY1ftcZhxHIoXnX8eFKwHYkSeeQGcObZ1YzGPD6ChS2cK84vMNlnH0jeC1t9DeZThC3WIJdA1gdRHLcwanI/kp1d3QzeI49yJefjMAB4w9tXYgkcT8jOrFleU5LOb1loPVR9mLr+CHPw1qGTWJJnQPIKr1JxSXMX1Xaa0dBnGcexEv/QQI/o4JtbcYhcSLy7g/ZvD9gHYcfSN4+c0wlFETSyDT29itQQoPMXXb5ssB1XOORAqvvRXsd5NvSjahLYvlOf//y5slPJyw/L0V1Tiefz1gn00OqK0TJV+vkm0UUZjFYt74+qxeHOksLlxRW01bxwnkpw5/faxSRqWMjSLWV7C25MqWL3pxXHo1bG8ou8UTiHhYfHSYfzt5Cw/G/B7ID0onpLF4aB9s3NHVH54T7RqlOIbPO/e9ie/iKbS6sSmZX5TiGDqrs46x9u7D/Kttl35oeDelOAZGddYx1tJxmHeWrY0GjOIHjTiiMYPfJzMRjSFZ/xbsand21UsjjnRXmD+nfE29p1a1HUvdpBFH6E9Fd6v32cb5aRfvRKzRiMPZJ7oaod5j5Iz6d60Hp3JCGq5P//ur60u4rQ3MftmwUY7Mgbt4j7F7N1B2eM9axmGmtIYvP7MeYl+Mw0gVN/7m9GEDjMPK+KfIT1oP8TiMw8CDOxi7Zj3EATjxUNOxMvEFbv4zGM98Mw495S3c/Iejt27siXGoqGJ6HLf/jdKq9ST1YByNtVHE9Dgmb1neJ3xojMNnKwt4cAebJawWsJjH8nwwTi/2xDh8NnMXn/3Fegif8KMsiRgHiRgHiRgHiRgHiRgHiRgHiRgHiRgHiRgHiTTiqLh9M5y/HL/zry4acawH6nvqI3JkF2xfaMSx9Eh1a1VbahuTK9CIY7uCR/cV1nHCwqz1BP5ROiGduKGzjrHaRm+hoRTHnY911jE2dTtUPzWnFEd+yuknhv1y5xPrCXyld53j4/fVlrKxUcT4deshfKUXx3+v4+GE2moGPv0TtsL1I3N6cVSr+POv3d2o5IhKq7j+gfUQflO9fD49jv+E7hWs+fDdEF7r0/5u5cPfYfae8poNd+9zfP5X6yEaQDuOShnv/RIr88rLNtBiHu//KsAPp+zD4FvZ1QLevYq1Rf2V/Vdcxu9/gfUV6zkaw+Yr+/lpvPNz7V8s893SHN75WaguiX6N2f0chVn85m1M3bZa/6gmb+G3b2NhxnqORvKuvmH5bul5uPgKLv8IseBsR7lZwr/ew/UPQnWlfE/Gz8pWq/jkjxi7hhd+jKefc32j4/IWvvg7PvpDIB+ZPwTjI8dubVl8+yU8dQmZPutRvmq7gpm7GLuGsY/c3Yq6ERyKY0d7F3pOI9uPVIvd200VpTWsLGBhBjN3sVkyGsOUi1swLM1hqQE/tkj14t3nJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJGIcJPofGT/O5QGT3NIAAAAASUVORK5CYII=">
+<meta name="theme-color" content="#F2F0F7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Instrument+Sans:wght@400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F0F7; --ink:#1C1A2B; --muted:#6B6980; --line:rgba(28,26,43,.11);
+  --accent:#8A5CFF;
+  --display:'Bricolage Grotesque','Avenir Next',system-ui,sans-serif;
+  --ui:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --r-lg:30px; --r-md:20px;
+}
+body[data-stage="landing"],body[data-stage="lobby"],body[data-stage="end"]{--accent:#8A5CFF}
+body[data-stage="vote"]{--accent:#4F6BFF}
+body[data-stage="reveal"]{--accent:#FF5C8A}
+body[data-stage="warmup"]{--accent:#FF6B4A}
+body[data-stage="deep"]{--accent:#FF9A2E}
+body[data-stage="hot"]{--accent:#0FB5D6}
+body[data-stage="closing"]{--accent:#19B59A}
+
+*{box-sizing:border-box;margin:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--ui);color:var(--ink);background:var(--bg);min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;font-size:16px;line-height:1.5;overflow-x:hidden}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:12px}
+
+/* background wash */
+.wash{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.wash i{position:absolute;border-radius:50%;filter:blur(110px);background-color:var(--accent);opacity:.36;transition:background-color 1.4s ease}
+.wash i:nth-child(1){width:52vw;height:52vw;left:-14vw;top:-22vw}
+.wash i:nth-child(2){width:44vw;height:44vw;right:-12vw;bottom:-20vw;opacity:.28}
+.wash::after{content:"";position:absolute;inset:0;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* header */
+header{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;padding:22px clamp(20px,4vw,48px)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:1.08rem;letter-spacing:-.01em}
+.brand svg{display:block}
+.steps{display:flex;gap:10px;list-style:none;padding:0}
+.steps li{width:86px;font-size:.75rem;color:var(--muted)}
+.steps li::before{content:"";display:block;height:4px;border-radius:4px;background:var(--line);margin-bottom:7px;transition:background-color .6s}
+.steps li.done::before{background:var(--ink)}
+.steps li.now{color:var(--ink);font-weight:600}
+.steps li.now::before{background:var(--accent)}
+.right{display:flex;justify-content:flex-end;align-items:center;gap:16px}
+.codechip{border:1px solid var(--line);background:rgba(255,255,255,.7);border-radius:999px;padding:6px 14px;font-size:.85rem;display:flex;gap:8px;align-items:center;backdrop-filter:blur(8px)}
+.codechip b{font-family:var(--display);font-weight:600;letter-spacing:.08em}
+.meter{display:grid;gap:5px;width:130px;font-size:.72rem;color:var(--muted)}
+.meter span{display:block;height:6px;border-radius:6px;background:var(--line);overflow:hidden}
+.meter span i{display:block;height:100%;width:var(--p,0%);background:var(--accent);border-radius:6px;transition:width .8s cubic-bezier(.2,.8,.2,1),background-color .6s}
+
+/* layout */
+main{display:grid;place-items:center;padding:clamp(8px,2vw,32px) clamp(20px,4vw,48px)}
+.wrap{width:100%;max-width:1040px}
+.center{text-align:center}
+.h1{font-family:var(--display);font-weight:600;font-size:clamp(2.4rem,5.2vw,4.5rem);line-height:1.02;letter-spacing:-.035em;text-wrap:balance}
+.h2{font-family:var(--display);font-weight:600;font-size:clamp(1.9rem,3.6vw,3rem);line-height:1.05;letter-spacing:-.03em;text-wrap:balance}
+.lede{font-size:1.1rem;color:var(--muted);max-width:46ch;margin-top:18px}
+.sub{color:var(--muted);margin-top:12px;max-width:56ch}
+.center .sub,.center .lede{margin-left:auto;margin-right:auto}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--ink);color:#fff;padding:14px 26px;font-weight:600;transition:transform .15s,opacity .2s,box-shadow .2s}
+.btn:hover:not(:disabled){transform:translateY(-1px)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover:not(:disabled){background:rgba(255,255,255,.7)}
+.btn.glow{box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 35%,transparent)}
+.btn.sm{padding:9px 16px;font-size:.88rem}
+.linkbtn{background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;font-size:.85rem;padding:6px}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;align-items:center}
+.wait{color:var(--muted);font-size:.95rem}
+
+/* avatars, chips */
+.av{display:block;flex:none}
+.pchip{display:inline-flex;align-items:center;gap:8px;padding:6px 14px 6px 8px;border-radius:999px;background:rgba(255,255,255,.72);border:1px solid var(--line);font-size:.88rem;font-weight:500;backdrop-filter:blur(8px);transition:opacity .3s,box-shadow .3s,transform .3s}
+.pchip small{color:var(--muted);font-weight:400}
+.pchip.off{opacity:.45}
+.pchip.on{box-shadow:0 0 0 2px var(--accent);background:#fff;transform:scale(1.04)}
+.pchip.me{border-color:var(--ink)}
+button.pchip{cursor:pointer}
+button.pchip.pick{box-shadow:0 0 0 2px var(--accent);background:#fff}
+
+/* landing */
+.landing{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.hero svg.art{width:100%;max-width:440px;margin-top:36px;display:block;overflow:visible}
+.art .edge{fill:none;stroke:var(--accent);stroke-width:1.5;stroke-opacity:.5}
+.panel{background:rgba(255,255,255,.8);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;display:grid;gap:20px;backdrop-filter:blur(14px)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:rgba(28,26,43,.06);border-radius:999px;padding:4px}
+.tabs button{border:0;background:transparent;border-radius:999px;padding:10px;font-weight:500;color:var(--muted)}
+.tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(28,26,43,.08)}
+label,.lbl{display:grid;gap:8px;font-size:.85rem;font-weight:500;color:var(--muted)}
+input[type=text],textarea{width:100%;border:1px solid var(--line);background:#fff;border-radius:16px;padding:13px 16px;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+textarea{resize:none;min-height:96px;line-height:1.4}
+input.code{font-family:var(--display);font-weight:600;letter-spacing:.3em;text-transform:uppercase;font-size:1.3rem}
+.stepper{display:flex;align-items:center;gap:14px}
+.stepper button{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.2rem;line-height:1}
+.stepper output{font-family:var(--display);font-weight:600;font-size:1.6rem;min-width:2ch;text-align:center;color:var(--ink)}
+.avs{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.avs button{display:grid;justify-items:center;gap:3px;padding:8px 0 6px;border-radius:16px;border:1px solid var(--line);background:#fff;font-size:.66rem;color:var(--muted);transition:box-shadow .2s,transform .2s}
+.avs button:hover{transform:translateY(-2px)}
+.avs button.on{box-shadow:0 0 0 2px var(--ink);color:var(--ink);font-weight:600}
+.avs button:disabled{opacity:.32;cursor:not-allowed;transform:none}
+.avs button.taken span{font-style:italic}
+.hintline{font-size:.8rem;font-weight:400;color:var(--muted)}
+.you{font-size:.88rem;color:var(--ink);font-weight:500}
+.slot small{color:var(--muted);margin-top:-6px}
+.err{color:#B3261E;font-size:.9rem}
+.demo{grid-column:1/-1;font-size:.82rem;color:var(--muted);max-width:70ch}
+
+/* lobby */
+.slots{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:34px 0 8px}
+.slot{width:104px;display:grid;justify-items:center;gap:8px;font-size:.85rem}
+.slot .disc{width:68px;height:68px;border-radius:24px;display:grid;place-items:center;background:rgba(255,255,255,.85);border:1px solid var(--line)}
+.slot.empty .disc{background:transparent;border:1.5px dashed rgba(28,26,43,.25)}
+.slot.empty span{color:var(--muted)}
+.bigcode{font-family:var(--display);font-weight:700;font-size:clamp(3rem,9vw,6.4rem);letter-spacing:.14em;line-height:1;margin:22px 0 4px;padding-left:.14em}
+.plan{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:.88rem}
+.plan span{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.55)}
+
+/* vote */
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.tcard{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;min-height:180px;padding:20px;border-radius:var(--r-lg);background:rgba(255,255,255,.8);border:1px solid var(--line);transition:transform .2s,box-shadow .2s,background-color .2s,border-color .2s;backdrop-filter:blur(8px)}
+.tcard:hover{transform:translateY(-3px)}
+.tcard.on{background:#fff;border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.glyph{width:34px;height:34px;color:var(--accent);margin-bottom:auto;display:block}
+.tname{font-family:var(--display);font-weight:600;font-size:1.28rem;letter-spacing:-.02em;line-height:1.1}
+.ttag{font-size:.85rem;color:var(--muted);line-height:1.35}
+.tdots{display:flex;gap:4px;min-height:10px;margin-top:6px;flex-wrap:wrap}
+.tdots i{width:10px;height:10px;border-radius:50%;background:var(--accent);animation:pop .3s}
+.votebar{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:28px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+.pips{display:flex;gap:6px}
+.pips i{width:12px;height:12px;border-radius:50%;border:2px solid var(--accent)}
+.pips i.full{background:var(--accent)}
+
+/* reveal */
+.spinwrap{min-height:46vh;display:grid;place-content:center;gap:16px;text-align:center}
+.spin{font-family:var(--display);font-weight:600;font-size:clamp(2.6rem,8vw,6.5rem);letter-spacing:-.04em;line-height:1}
+.spin.tick{animation:tick .18s ease-out}
+.landed-theme .glyph{width:64px;height:64px;margin:0 auto 18px}
+.landed-theme .spin{animation:land .7s cubic-bezier(.2,1.3,.3,1)}
+.tiebadge{display:inline-block;margin:0 auto;padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+
+/* warm-up */
+.prompt{font-family:var(--display);font-weight:500;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.02em;margin-top:6px}
+.metaline{display:flex;gap:14px;justify-content:center;align-items:center;color:var(--muted);font-size:.9rem;flex-wrap:wrap}
+.pill{display:inline-block;padding:5px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.8rem;font-weight:600;color:var(--ink)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+.choice{--pct:0%;position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;text-align:left;min-height:240px;padding:26px;border-radius:var(--r-lg);border:1px solid var(--line);background:rgba(255,255,255,.82);transition:transform .2s,box-shadow .2s;backdrop-filter:blur(8px);overflow:hidden}
+.choice:hover:not(:disabled){transform:translateY(-3px)}
+.choice.on{box-shadow:0 0 0 2px var(--accent);background:#fff}
+.choice:disabled{cursor:default}
+.choice.res{background:linear-gradient(to top,color-mix(in srgb,var(--accent) 24%,white) var(--pct),rgba(255,255,255,.85) var(--pct));transition:background .6s}
+.choice .ct{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,3vw,2.5rem);line-height:1.05;letter-spacing:-.03em}
+.choice .who{display:flex;flex-wrap:wrap;gap:6px;min-height:24px;align-items:center;font-size:.85rem;color:var(--muted)}
+.choice .num{font-family:var(--display);font-weight:600;font-size:1.1rem;color:var(--ink);margin-right:6px}
+.nudge{margin-top:24px;text-align:center;font-family:var(--display);font-size:1.25rem;letter-spacing:-.01em;animation:rise .5s both}
+
+/* deep dive */
+.deephead{display:flex;justify-content:center;gap:14px;align-items:center;color:var(--muted);font-size:.9rem}
+.landed{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap;font-size:1.05rem}
+.qcard{margin:20px auto 0;max-width:820px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:36px;padding:clamp(28px,4vw,52px);text-align:center;backdrop-filter:blur(10px)}
+.qcard.drop{animation:drop .8s cubic-bezier(.2,.9,.25,1.05) both}
+.q{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
+.q.small{font-size:1rem;color:var(--muted);font-family:var(--ui);letter-spacing:0;margin-bottom:18px}
+.hint{text-align:center;color:var(--muted);margin:18px auto 0;font-size:.95rem;max-width:56ch}
+.passgrid{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:22px 0 18px}
+.passbox{max-width:520px;margin:0 auto;display:grid;gap:14px;text-align:left}
+
+/* hot or not */
+.rates{display:flex;gap:14px;justify-content:center;margin-top:30px}
+.rate{width:68px;height:68px;border-radius:50%;border:1px solid var(--line);background:rgba(255,255,255,.88);font-family:var(--display);font-weight:600;font-size:1.5rem;transition:transform .2s,background-color .2s,color .2s,box-shadow .2s}
+.rate:hover{transform:translateY(-3px)}
+.rate.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.scalelab{display:flex;justify-content:space-between;width:min(100%,calc(5*68px + 4*14px));margin:12px auto 0;font-size:.85rem;color:var(--muted);padding:0 14px}
+.avg{display:grid;justify-items:center;margin-top:26px}
+.avg b{font-family:var(--display);font-weight:600;font-size:clamp(3rem,7vw,5rem);letter-spacing:-.04em;line-height:1}
+.avg span{color:var(--muted);font-size:.9rem}
+.dist{display:grid;grid-template-columns:repeat(5,92px);column-gap:12px;row-gap:8px;justify-content:center;margin-top:18px}
+.dcol{display:grid;grid-row:span 3;grid-template-rows:subgrid;justify-items:center;width:92px;row-gap:8px}
+.dav{align-self:end;display:flex;flex-wrap:wrap-reverse;justify-content:center;gap:4px;width:92px;min-height:64px}
+.dnum{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--display);font-weight:600}
+.dnames{font-size:.72rem;color:var(--muted);line-height:1.25;min-height:2.5em}
+
+/* closing */
+.compose{max-width:620px;margin:30px auto 0;display:grid;gap:14px}
+.count{font-size:.78rem;color:var(--muted);text-align:right}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:40px}
+.note{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:26px;padding:20px 22px;display:grid;gap:10px;animation:rise .5s both}
+.note .to{display:flex;align-items:center;gap:8px;font-weight:600;font-size:.9rem}
+.note p{font-family:var(--display);font-size:1.2rem;line-height:1.2;letter-spacing:-.015em}
+.note small{color:var(--muted)}
+
+/* summary */
+.summary{background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:40px;padding:clamp(26px,4vw,52px);display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;backdrop-filter:blur(12px)}
+.badges{display:grid;gap:10px;margin-top:26px}
+.badge{display:flex;align-items:center;gap:12px}
+.badge b{font-weight:600}
+.badge small{display:block;color:var(--muted);font-size:.82rem;line-height:1.2}
+.summary svg.cons{width:100%;max-width:320px;margin:0 auto;display:block}
+
+/* footer */
+footer{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding:18px clamp(20px,4vw,48px) 24px}
+.roster{display:flex;flex-wrap:wrap;gap:8px;max-width:760px}
+svg.cons .edge{fill:none;stroke:var(--accent);stroke-opacity:.55;stroke-linecap:round;transition:stroke-width .6s}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:10;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* motion */
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tick{from{opacity:.2;transform:translateY(14px);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes land{from{transform:scale(.8);opacity:0}to{transform:none;opacity:1}}
+@keyframes drop{0%{transform:translateY(-90px) rotate(-2.5deg);opacity:0}55%{transform:translateY(10px) rotate(.8deg);opacity:1}100%{transform:none}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.fresh .art .edge{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.4s ease forwards;animation-delay:var(--d,0s)}
+.fresh .art .node{animation:land .6s cubic-bezier(.2,1.3,.3,1) both;animation-delay:var(--d,0s);transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+@media (max-width:900px){
+  .landing,.summary{grid-template-columns:1fr}
+  .tgrid{grid-template-columns:repeat(2,1fr)}
+  header{grid-template-columns:1fr auto}
+  .steps{display:none}
+  .meter{display:none}
+  .pair{grid-template-columns:1fr}
+  .rate{width:54px;height:54px}
+  .rates{gap:8px}
+  .dist{grid-template-columns:repeat(5,60px);column-gap:6px}
+  .dcol{width:60px}
+  .dav{width:60px}
+  footer .cons{display:none}
+}
+</style>
+</head>
+<body data-stage="landing">
+<div class="wash" aria-hidden="true"><i></i><i></i></div>
+<header id="top"></header>
+<main id="main"></main>
+<footer id="foot"></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ============================================================
+   Setup
+   Paste your Firebase Realtime Database URL below to go live.
+   Leave it empty to run in demo mode (tabs of the same browser).
+   Example: "https://your-project-default-rtdb.firebaseio.com"
+   ============================================================ */
+const FIREBASE_URL = "https://open-tabs-tsc-default-rtdb.firebaseio.com";
+const DEMO = !FIREBASE_URL;
+
+/* ---------------- content ---------------- */
+const THEMES = [
+  {id:"ai", name:"AI at work", tag:"How we use it, and what we learn",
+   pairs:[["AI writes the first draft","I write the first draft"],["Ask AI first","Search the web first"],["Trust the answer","Always double-check"],["AI for ideas","AI for boring tasks"],["Chat with AI","Automate with AI"]],
+   deep:["What is one task AI does for you now that you used to do by hand?","What is the best prompt or trick you have learned? Share it with us.","When did AI give you a wrong answer? How did you notice?","What would you never let AI do for you, even if it could?","Which AI tool do you use that most of us may not know?","How do you think AI will change your job in two years?","What is one thing you would automate tomorrow if you could?"]},
+  {id:"tech", name:"Tech we love", tag:"Tools, gadgets and tricks",
+   pairs:[["Dark mode","Light mode"],["Keyboard shortcuts","Mouse and menus"],["One big screen","Two or more screens"],["Early adopter","Wait for version two"],["Phone","Laptop"]],
+   deep:["What is the one app or tool you could not work without?","What is a keyboard shortcut or small trick that saves you time?","What is the best piece of tech you ever bought?","What old technology do you miss?","What new technology are you most excited about right now?","What tool did you try and then stop using? Why?","What is one tech trend you think is overhyped?"]},
+  {id:"lessons", name:"Lessons from work", tag:"Mistakes, fixes and what we learned",
+   pairs:[["Learn by doing","Learn by watching"],["Move fast","Plan carefully"],["Ask for help early","Try alone first"],["Feedback right away","Feedback in writing"],["Learn from mistakes","Learn from wins"]],
+   deep:["What is a work mistake that taught you a lot?","What is the best advice you got early in your career?","When did asking for help change the result of a project?","Which project did not go as planned? What would you do differently?","What feedback was hard to hear but turned out to be right?","What would you tell a new teammate on their first day?","What is a skill you wish you had learned sooner?"]},
+  {id:"learn", name:"Learning and skills", tag:"How we keep growing",
+   pairs:[["Video course","Book or article"],["Go deep on one thing","Learn many things a little"],["Learn alone","Learn in a group"],["Teach others","Learn from others"],["Short daily practice","Long focused sessions"]],
+   deep:["What is the last thing you learned that made you proud?","What is the best course, book, video or podcast you found for work?","What skill do you want to learn this year?","How do you learn something new fast?","Who at work taught you something important?","What do you know well enough to teach in ten minutes?","What topic could you read about for hours?"]},
+  {id:"hot", name:"Hot takes", tag:"Strong opinions about work and tech",
+   pairs:[["Shorter meetings","Meetings are fine"],["Camera on","Camera optional"],["Email","Chat"],["Remote first","Office first"],["Documents","Slides"]],
+   deep:["What is a work opinion that many people disagree with?","Which tech trend do you think is overhyped?","What meeting habit would you remove today?","What is one rule at work that you would change?","What did you change your mind about in the last year?","What is the best way to give feedback, in your view?","Which buzzword would you ban?"]},
+  {id:"adventure", name:"Adventures", tag:"Trips, challenges and new places",
+   pairs:[["Beach","Mountains"],["Plan every detail","Go with the flow"],["Big city trip","Nature trip"],["Try the local food","Find food you know"],["Travel alone","Travel with a group"]],
+   deep:["What is the best trip you have ever taken?","What is the most unusual place you have visited?","What is one place you really want to see?","What is the most adventurous thing you have done?","What is the best travel tip you can share?","What food did you try while traveling that surprised you?","If our team could take a trip together, where would you go?"]},
+  {id:"recs", name:"Recommendations", tag:"Books, shows, podcasts and more",
+   pairs:[["Book","Movie"],["Podcast","Playlist"],["Binge a series","Watch one film"],["Read the book first","Watch the movie first"],["Audiobook","Paper book"]],
+   deep:["What book would you recommend to this team?","What podcast or channel do you follow, for work or for fun?","What show or movie did you enjoy lately?","What is a game you love?","What is the best thing you read or watched this year?","What music or playlist helps you focus?","What small app or website do you think everyone should know?"]},
+  {id:"ideas", name:"Ideas and innovation", tag:"What if, and what is next",
+   pairs:[["Big idea, long time","Small idea, fast"],["Invent something new","Improve something old"],["Brainstorm together","Think alone first"],["Prototype first","Research first"],["Follow the data","Follow your instinct"]],
+   deep:["What problem at work would you love to solve?","If you had a free week to build anything, what would you build?","Which product or service do you think is really well designed?","Which process on our team could be much simpler?","Which technology do you think will change the world in ten years?","What is a bold idea you have never shared?","What would help our team work better together?"]}
+];
+const HOT = [
+  "Most AI agents today are impressive demos, not reliable products.",
+  "In five years, most first drafts of code, docs and designs will come from AI.",
+  "Open models will beat closed models for most business uses.",
+  "Most dashboards are built once and never used again.",
+  "Technical debt is mostly a communication problem, not a code problem.",
+  "A good prototype is worth more than a good spec.",
+  "Estimating work in hours or points is mostly guessing.",
+  "Most companies should buy tools, not build them.",
+  "AI will make junior roles harder to find, not easier.",
+  "Rules and regulation will shape AI more than technology will.",
+  "Product teams ship too many features and fix too few problems.",
+  "Most security problems are people problems, not technical problems.",
+  "Writing well will matter more than coding well in ten years.",
+  "Real-time collaboration tools have made us worse at deep work."
+];
+const HOT_N = 5;
+const THEME = id => THEMES.find(t => t.id === id);
+const ROUNDS = 6, MODES = ["spark","spark","pair","spark","all","spark"];
+const MODE = {
+  spark:{label:"Spark", hint:"Answer, then pass the spark to someone with a follow-up question."},
+  pair:{label:"Pair up", hint:"Answer together or take turns. Everyone else, listen for something to ask later."},
+  all:{label:"Everyone", hint:"One sentence each. Whoever finishes picks the next voice."}
+};
+const STAGES = [["lobby","Lobby"],["vote","Vote"],["warmup","Warm-up"],["deep","Deep dive"],["hot","Hot or not"],["closing","Closing"]];
+const STAGE_IDX = {lobby:0,vote:1,reveal:1,warmup:2,deep:3,hot:4,closing:5,end:6};
+const ANIMALS = [
+  {name:"Fox", color:"#FFD6B0", svg:'<path d="M4 5.5 12 10.5h8l8-5L27 19.5C26 26.5 21 28.5 16 28.5S6 26.5 5 19.5Z"/><path d="M6.8 9.2l3 2M25.2 9.2l-3 2"/><circle cx="11.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><ellipse cx="16" cy="22.4" rx="1.7" ry="1.2" fill="#1C1A2B"/><path d="M13.2 26c1.2.9 2.2.9 2.8-.9.6 1.8 1.6 1.8 2.8.9"/>'},
+  {name:"Owl", color:"#D9CFFF", svg:'<path d="M6 4.5 11.5 8h9L26 4.5V20c0 5.5-4.5 8.5-10 8.5S6 25.5 6 20Z"/><circle cx="11.2" cy="15.3" r="4.4"/><circle cx="20.8" cy="15.3" r="4.4"/><circle cx="11.2" cy="15.3" r="1.4" fill="#1C1A2B" stroke="none"/><circle cx="20.8" cy="15.3" r="1.4" fill="#1C1A2B" stroke="none"/><path d="M14.4 20.4 16 22.7l1.6-2.3"/>'},
+  {name:"Frog", color:"#D6EDA6", svg:'<ellipse cx="16" cy="20" rx="12.5" ry="8.5" fill="#D6EDA6"/><circle cx="9.5" cy="11.5" r="4.6" fill="#D6EDA6"/><circle cx="22.5" cy="11.5" r="4.6" fill="#D6EDA6"/><circle cx="9.5" cy="11.7" r="1.4" fill="#1C1A2B" stroke="none"/><circle cx="22.5" cy="11.7" r="1.4" fill="#1C1A2B" stroke="none"/><circle cx="14.6" cy="18" r="0.8" fill="#1C1A2B" stroke="none"/><circle cx="17.4" cy="18" r="0.8" fill="#1C1A2B" stroke="none"/><path d="M9.5 22.5c3.6 3.2 9.4 3.2 13 0"/>'},
+  {name:"Penguin", color:"#C8E4FF", svg:'<path d="M5.6 14.5c-2.8 4-2.6 8-.8 10.4M26.4 14.5c2.8 4 2.6 8 .8 10.4"/><ellipse cx="16" cy="16.5" rx="10.3" ry="12.5"/><path d="M10.2 21.5c0 4 2.6 6.2 5.8 6.2s5.8-2.2 5.8-6.2c0-2.6-2.6-4.4-5.8-4.4s-5.8 1.8-5.8 4.4Z"/><circle cx="12.7" cy="11.2" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.3" cy="11.2" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M14.4 13.6h3.2L16 15.8Z" fill="#1C1A2B" stroke-width="1.2"/>'},
+  {name:"Octopus", color:"#FFC8C0", svg:'<path d="M9 19q-1 6-5.5 8M13 21q-.4 4.5-3 7M19 21q.4 4.5 3 7M23 19q1 6 5.5 8"/><circle cx="16" cy="13" r="9.5" fill="#FFC8C0"/><circle cx="12.5" cy="12.5" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.5" cy="12.5" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M13.6 16.4c1.5 1.3 3.3 1.3 4.8 0"/>'},
+  {name:"Rabbit", color:"#F9D3EA", svg:'<ellipse cx="11" cy="8.5" rx="3" ry="7" fill="#F9D3EA"/><ellipse cx="21" cy="8.5" rx="3" ry="7" fill="#F9D3EA"/><ellipse cx="16" cy="20.5" rx="10" ry="8.3" fill="#F9D3EA"/><circle cx="12" cy="19.6" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20" cy="19.6" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M14.6 22.2h2.8L16 23.6Z" stroke-width="1.6"/><path d="M16 23.6v1.2M14 25.6q2 1.4 4 0"/>'},
+  {name:"Bear", color:"#E6D2BC", svg:'<circle cx="7.5" cy="8" r="3.8" fill="#E6D2BC"/><circle cx="24.5" cy="8" r="3.8" fill="#E6D2BC"/><circle cx="16" cy="17.5" r="11" fill="#E6D2BC"/><ellipse cx="16" cy="21.5" rx="5" ry="3.8"/><circle cx="11.5" cy="15.3" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20.5" cy="15.3" r="1.2" fill="#1C1A2B" stroke="none"/><ellipse cx="16" cy="19.9" rx="1.7" ry="1.2" fill="#1C1A2B"/><path d="M16 21.1v1.7"/>'},
+  {name:"Cat", color:"#FFE39A", svg:'<path d="M4.5 4.5 12 9.5h8l7.5-5V18c0 6.5-5 10-11.5 10S4.5 24.5 4.5 18Z"/><circle cx="11.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M14.8 21h2.4L16 22.3Z" fill="#1C1A2B" stroke-width="1.2"/><path d="M16 22.3v1.1M13.6 24.2c1 .6 1.9.5 2.4-.6M16 23.5c.5 1.1 1.4 1.2 2.4.6"/><path d="M2 20.5h5M2.4 23.5l4.6-1.2M30 20.5h-5M29.6 23.5l-4.6-1.2" stroke-width="1.4"/>'},
+  {name:"Whale", color:"#C5D0FF", svg:'<path d="M23 16.5 29.5 10.5 29 18l.8 6.5L23 21Z" fill="#C5D0FF"/><ellipse cx="14" cy="18" rx="11.5" ry="8.5" fill="#C5D0FF"/><circle cx="8" cy="16" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M4 21.5c6 3.5 13 3.5 19 0"/><path d="M13 9.5V5.5M10 9.8 8.5 7.5M16 9.8l1.5-2.3"/>'},
+  {name:"Turtle", color:"#BDEBDD", svg:'<g transform="translate(0 -2.5)"><circle cx="27.4" cy="19.6" r="3.4" fill="#BDEBDD"/><rect x="7" y="23" width="4.6" height="4" rx="1.6" fill="#BDEBDD"/><rect x="19.4" y="23" width="4.6" height="4" rx="1.6" fill="#BDEBDD"/><path d="M3.5 23A12.5 11.5 0 0 1 28.5 23Z" fill="#BDEBDD"/><path d="M16 23v-9.5M9.4 23l1.8-6.2M22.6 23l-1.8-6.2"/><circle cx="28.4" cy="19" r="0.9" fill="#1C1A2B" stroke="none"/></g>'},
+  {name:"Giraffe", color:"#F6C98B", svg:'<path d="M11.5 8.5 11.8 5M20.5 8.5 20.2 5"/><circle cx="11.9" cy="3.8" r="1.5" fill="#1C1A2B"/><circle cx="20.1" cy="3.8" r="1.5" fill="#1C1A2B"/><ellipse cx="5.5" cy="12.2" rx="3.2" ry="1.8" transform="rotate(-25 5.5 12.2)" fill="#F6C98B"/><ellipse cx="26.5" cy="12.2" rx="3.2" ry="1.8" transform="rotate(25 26.5 12.2)" fill="#F6C98B"/><ellipse cx="16" cy="16.5" rx="8.3" ry="10" fill="#F6C98B"/><ellipse cx="16" cy="23.4" rx="5.4" ry="4"/><circle cx="12.5" cy="16" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.5" cy="16" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="14.3" cy="23.3" r="0.8" fill="#1C1A2B" stroke="none"/><circle cx="17.7" cy="23.3" r="0.8" fill="#1C1A2B" stroke="none"/><circle cx="11.6" cy="10.6" r="1.1" stroke-width="1.3"/><circle cx="20.4" cy="11.2" r="1.1" stroke-width="1.3"/><circle cx="16" cy="9.2" r=".9" stroke-width="1.3"/>'},
+  {name:"Elephant", color:"#D4D8E2", svg:'<path d="M13 20v7a3 3 0 0 0 6 0v-7" fill="#D4D8E2"/><circle cx="6" cy="14.5" r="5.5" fill="#D4D8E2"/><circle cx="26" cy="14.5" r="5.5" fill="#D4D8E2"/><circle cx="16" cy="14.5" r="9.2" fill="#D4D8E2"/><circle cx="12.3" cy="13" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.7" cy="13" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M14.6 21.5h2.8" stroke-width="1.4"/>'},
+  {name:"Dog", color:"#D7E3C4", svg:'<ellipse cx="16" cy="16.5" rx="9" ry="10.5" fill="#D7E3C4"/><ellipse cx="6.8" cy="15" rx="3.4" ry="7" transform="rotate(12 6.8 15)" fill="#D7E3C4"/><ellipse cx="25.2" cy="15" rx="3.4" ry="7" transform="rotate(-12 25.2 15)" fill="#D7E3C4"/><circle cx="12.5" cy="14.5" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.5" cy="14.5" r="1.2" fill="#1C1A2B" stroke="none"/><ellipse cx="16" cy="19.2" rx="2.2" ry="1.6" fill="#1C1A2B"/><path d="M16 20.8v1.8M13.2 23.4c1.2 1 2.2 1 2.8-.7.6 1.7 1.6 1.7 2.8.7"/>'},
+  {name:"Lion", color:"#F5BFA6", svg:'<circle cx="26.20" cy="16.50" r="3.1" fill="#F5BFA6"/><circle cx="24.25" cy="22.50" r="3.1" fill="#F5BFA6"/><circle cx="19.15" cy="26.20" r="3.1" fill="#F5BFA6"/><circle cx="12.85" cy="26.20" r="3.1" fill="#F5BFA6"/><circle cx="7.75" cy="22.50" r="3.1" fill="#F5BFA6"/><circle cx="5.80" cy="16.50" r="3.1" fill="#F5BFA6"/><circle cx="7.75" cy="10.50" r="3.1" fill="#F5BFA6"/><circle cx="12.85" cy="6.80" r="3.1" fill="#F5BFA6"/><circle cx="19.15" cy="6.80" r="3.1" fill="#F5BFA6"/><circle cx="24.25" cy="10.50" r="3.1" fill="#F5BFA6"/><circle cx="16" cy="16.5" r="8.4" fill="#F5BFA6"/><circle cx="12.8" cy="15" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="19.2" cy="15" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M14.6 18h2.8L16 19.5Z" fill="#1C1A2B" stroke-width="1.2"/><path d="M16 19.5v1.3M13.6 21.8c1.2.9 2.2.8 2.4-1 .2 1.8 1.2 1.9 2.4 1"/>'},
+  {name:"Panda", color:"#E4E6EB", svg:'<circle cx="7.8" cy="8.5" r="3.6" fill="#1C1A2B"/><circle cx="24.2" cy="8.5" r="3.6" fill="#1C1A2B"/><circle cx="16" cy="17.5" r="11" fill="#E4E6EB"/><ellipse cx="11.4" cy="16" rx="2.7" ry="3.3" transform="rotate(20 11.4 16)" fill="#1C1A2B"/><ellipse cx="20.6" cy="16" rx="2.7" ry="3.3" transform="rotate(-20 20.6 16)" fill="#1C1A2B"/><circle cx="11.9" cy="16" r=".8" fill="#fff" stroke="none"/><circle cx="20.1" cy="16" r=".8" fill="#fff" stroke="none"/><ellipse cx="16" cy="20.6" rx="1.7" ry="1.2" fill="#1C1A2B"/><path d="M16 21.8v1.5M13.6 23.8c1.2 1 2.2 1 2.4-.5.2 1.5 1.2 1.5 2.4.5"/>'},
+  {name:"Pig", color:"#FFC4CF", svg:'<path d="M6.5 11 5.5 4.8l6.2 3Z" fill="#FFC4CF"/><path d="M25.5 11l1-6.2-6.2 3Z" fill="#FFC4CF"/><circle cx="16" cy="17" r="11" fill="#FFC4CF"/><ellipse cx="16" cy="20.6" rx="5.4" ry="4"/><circle cx="14.2" cy="20.6" r="0.9" fill="#1C1A2B" stroke="none"/><circle cx="17.8" cy="20.6" r="0.9" fill="#1C1A2B" stroke="none"/><circle cx="11" cy="14.5" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="21" cy="14.5" r="1.2" fill="#1C1A2B" stroke="none"/>'},
+  {name:"Koala", color:"#C9D6E2", svg:'<circle cx="6.8" cy="10.5" r="5.2" fill="#C9D6E2"/><circle cx="25.2" cy="10.5" r="5.2" fill="#C9D6E2"/><circle cx="6.8" cy="10.5" r="2.4"/><circle cx="25.2" cy="10.5" r="2.4"/><circle cx="16" cy="17.5" r="10" fill="#C9D6E2"/><circle cx="12" cy="15.5" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20" cy="15.5" r="1.2" fill="#1C1A2B" stroke="none"/><ellipse cx="16" cy="19.2" rx="2.4" ry="3.2" fill="#1C1A2B"/><path d="M13.6 24.6c1.4 1.1 3.4 1.1 4.8 0"/>'},
+  {name:"Duck", color:"#BDE8EA", svg:'<ellipse cx="14" cy="22" rx="10" ry="6" fill="#BDE8EA"/><circle cx="19" cy="11.5" r="6.5" fill="#BDE8EA"/><ellipse cx="26.6" cy="13" rx="3.6" ry="1.9" fill="#BDE8EA"/><circle cx="20.6" cy="10.4" r="1.2" fill="#1C1A2B" stroke="none"/><path d="M8.5 21.2c3 3 8 3 11 0"/>'}
+];
+const COLORS = ANIMALS.map(a => a.color);
+const ALL_AV = ANIMALS.map((_, i) => i);
+
+/* ---------------- visual atoms ---------------- */
+const shape = i => { const a = ANIMALS[i % 18]; return `<circle cx="16" cy="16" r="16" fill="${a.color}"/><g transform="translate(16 16) scale(.7) translate(-16 -16)" fill="none" stroke="#1C1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${a.svg}</g>`; };
+const animalName = i => ANIMALS[i % 18].name;
+const av = (i, px = 28) => `<svg class="av" viewBox="0 0 32 32" width="${px}" height="${px}" style="color:${COLORS[i % 18]}" role="img" aria-label="${animalName(i)}">${shape(i)}</svg>`;
+const GLYPHS = [
+  '<circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="6"/>',
+  '<path d="M6 30A14 14 0 0 1 34 30"/><circle cx="20" cy="30" r="3"/>',
+  '<path d="M20 7 34 32H6Z" stroke-linejoin="round"/>',
+  '<rect x="10" y="10" width="20" height="20" rx="4" transform="rotate(45 20 20)"/>',
+  '<path d="M8 33V20A12 12 0 0 1 32 20V33Z" stroke-linejoin="round"/>',
+  '<path d="M20 6 23 17 34 20 23 23 20 34 17 23 6 20 17 17Z" stroke-linejoin="round"/>',
+  '<path d="M8 34V18L20 7 32 18V34Z" stroke-linejoin="round"/>',
+  '<circle cx="20" cy="20" r="6"/><path d="M20 5v5M20 30v5M5 20h5M30 20h5M9.4 9.4l3.5 3.5M27.1 27.1l3.5 3.5M9.4 30.6l3.5-3.5M27.1 12.9l3.5-3.5"/>'
+];
+const glyph = i => `<svg class="glyph" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">${GLYPHS[i % 18]}</svg>`;
+const themeIdx = id => THEMES.findIndex(t => t.id === id);
+
+/* ---------------- utils ---------------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const rid = (p = "p") => p + Math.random().toString(36).slice(2, 8);
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+function seeded(str){
+  let h = 1779033703 ^ str.length;
+  for (let i = 0; i < str.length; i++){ h = Math.imul(h ^ str.charCodeAt(i), 3432918353); h = h << 13 | h >>> 19; }
+  return () => { h = Math.imul(h ^ h >>> 16, 2246822507); h = Math.imul(h ^ h >>> 13, 3266489909); h ^= h >>> 16; return (h >>> 0) / 4294967296; };
+}
+function shuffle(arr, rnd){ const a = arr.slice(); for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function toast(msg){ const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2600); }
+async function copy(text){ try { await navigator.clipboard.writeText(text); } catch { const a = document.createElement("textarea"); a.value = text; document.body.appendChild(a); a.select(); document.execCommand("copy"); a.remove(); } }
+
+/* ---------------- sync layer ---------------- */
+function setAt(obj, parts, val){
+  let o = obj;
+  for (let i = 0; i < parts.length - 1; i++){ if (typeof o[parts[i]] !== "object" || o[parts[i]] === null) o[parts[i]] = {}; o = o[parts[i]]; }
+  const k = parts[parts.length - 1];
+  if (val === null || val === undefined) delete o[k]; else o[k] = val;
+}
+function applyUpdates(state, updates){
+  state = state || {};
+  for (const [p, v] of Object.entries(updates)) setAt(state, p.split("/").filter(Boolean), v);
+  return state;
+}
+function demoTransport(){
+  const key = c => "cg:room:" + c;
+  const read = c => { try { return JSON.parse(localStorage.getItem(key(c))); } catch { return null; } };
+  return {
+    async get(c){ return read(c); },
+    async update(c, u){ localStorage.setItem(key(c), JSON.stringify(applyUpdates(read(c), u))); },
+    subscribe(c, cb){
+      const h = e => { if (e.key === key(c)) cb(read(c)); };
+      addEventListener("storage", h); cb(read(c));
+      return () => removeEventListener("storage", h);
+    }
+  };
+}
+function fbTransport(base){
+  base = base.replace(/\/+$/, "");
+  const url = c => `${base}/rooms/${c}.json`;
+  return {
+    async get(c){ const r = await fetch(url(c)); if (!r.ok) throw new Error("net"); return r.json(); },
+    async update(c, u){
+      const r = await fetch(url(c), {method:"PATCH", headers:{"Content-Type":"application/json"}, body:JSON.stringify(u)});
+      if (!r.ok) throw new Error("net");
+    },
+    subscribe(c, cb){
+      let state = null;
+      const es = new EventSource(url(c));
+      const apply = (path, data, merge) => {
+        const parts = path.split("/").filter(Boolean);
+        if (merge){ for (const [k, v] of Object.entries(data || {})) state = applyUpdates(state, {[[...parts, k].join("/")]: v}); }
+        else if (!parts.length) state = data;
+        else state = applyUpdates(state, {[parts.join("/")]: data});
+      };
+      es.addEventListener("put", e => { const m = JSON.parse(e.data); apply(m.path, m.data, false); cb(state); });
+      es.addEventListener("patch", e => { const m = JSON.parse(e.data); apply(m.path, m.data, true); cb(state); });
+      return () => es.close();
+    }
+  };
+}
+const T = DEMO ? demoTransport() : fbTransport(FIREBASE_URL);
+
+/* ---------------- app state ---------------- */
+let S = null;                       // shared room state
+let me = {code:null, pid:null};
+let unsub = null, pingTimer = null;
+const ui = {mode:"landing", tab:"host", err:"", busy:false, f:{name:"", code:"", note:"", follow:""}, form:{av:0, expected:6}, target:null, noteTo:null, taken:[], room:null, revealStarted:null, revealedFor:null, animating:false};
+
+const players = () => Object.entries(S?.players || {}).map(([id, p]) => ({id, ...p})).sort((a, b) => (a.at || 0) - (b.at || 0) || a.id.localeCompare(b.id));
+const P = id => S?.players?.[id];
+const nm = id => esc(P(id)?.name || "Someone");
+const isHost = () => S?.hostId === me.pid;
+const present = id => { const s = P(id)?.seen; return !s || Date.now() - s < 120000; };
+const chip = (p, cls = "") => `<span class="pchip ${cls}" title="${animalName(p.av)}">${av(p.av, 22)}<span>${esc(p.name)}</span></span>`;
+const chipId = (id, cls = "") => P(id) ? chip({id, ...P(id)}, cls) : "";
+const tallies = () => { const t = {}; for (const v of Object.values(S?.votes || {})) for (const k of Object.keys(v || {})) t[k] = (t[k] || 0) + 1; return t; };
+const myVotes = () => Object.keys(S?.votes?.[me.pid] || {});
+const hotOrder = () => shuffle(HOT.map((_, i) => i), seeded(me.code + "hot"));
+const deepOrder = () => { const th = THEME(S.theme); return shuffle(th.deep.map((_, i) => i), seeded(me.code + S.theme)); };
+const deepQ = qi => { const th = THEME(S.theme), o = deepOrder(); return th.deep[o[qi % o.length]]; };
+
+function commit(updates){
+  S = applyUpdates(S, updates);
+  render();
+  T.update(me.code, updates).catch(() => toast("Connection hiccup. Check your network."));
+}
+
+/* ---------------- room lifecycle ---------------- */
+const CODE_CHARS = "BCDFGHJKLMNPQRSTVWXZ";
+const makeCode = () => Array.from({length:4}, () => CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)]).join("");
+const inviteLink = () => location.href.split(/[?#]/)[0] + "?room=" + me.code;
+
+let lookupSeq = 0;
+async function lookupRoom(){
+  const code = (ui.f.code || "").trim().toUpperCase();
+  if (code.length !== 4){ if (ui.taken.length || ui.room){ ui.taken = []; ui.room = null; render(); } return; }
+  const seq = ++lookupSeq;
+  try {
+    const room = await T.get(code);
+    if (seq !== lookupSeq) return;
+    const ok = !!(room && room.hostId);
+    ui.taken = ok ? Object.values(room.players || {}).map(p => p.av) : [];
+    ui.room = {code, ok};
+    if (ui.taken.includes(ui.form.av)) ui.form.av = ALL_AV.find(i => !ui.taken.includes(i)) ?? ui.form.av;
+    render();
+  } catch {}
+}
+async function createRoom(){
+  const f = ui.f;
+  if (!f.name.trim()) return setErr("Add your name first.");
+  ui.busy = true; setErr("");
+  try {
+    let code = makeCode();
+    for (let i = 0; i < 8; i++){ if (!(await T.get(code))) break; code = makeCode(); }
+    const pid = rid();
+    await T.update(code, {hostId:pid, expected:ui.form.expected, stage:"lobby", created:Date.now(), players:{[pid]:{name:f.name.trim().slice(0, 20), av:ui.form.av, at:Date.now(), seen:Date.now()}}});
+    enter(code, pid);
+  } catch { setErr("Couldn’t reach the server. Check your connection and try again."); }
+  ui.busy = false; render();
+}
+async function joinRoom(){
+  const f = ui.f, code = f.code.trim().toUpperCase();
+  if (!code) return setErr("Enter the room code from your host.");
+  if (!f.name.trim()) return setErr("Add your name first.");
+  ui.busy = true; setErr("");
+  try {
+    const room = await T.get(code);
+    if (!room || !room.hostId){ setErr("We couldn’t find that room. Check the code with your host."); ui.busy = false; return render(); }
+    const name = f.name.trim().slice(0, 20), ps = Object.entries(room.players || {});
+    const again = ps.find(([, p]) => p.name.toLowerCase() === name.toLowerCase());
+    let pid;
+    if (again){ pid = again[0]; await T.update(code, {[`players/${pid}/seen`]:Date.now()}); }
+    else {
+      if (ps.length >= 18){ setErr("This room is full (18 people)."); ui.busy = false; return render(); }
+      const taken = ps.map(([, p]) => p.av);
+      if (taken.includes(ui.form.av)){
+        ui.taken = taken; ui.room = {code, ok:true};
+        ui.form.av = ALL_AV.find(i => !taken.includes(i)) ?? ui.form.av;
+        setErr("Someone just picked that animal. We chose another one for you. Check it and join again.");
+        ui.busy = false; return render();
+      }
+      const avi = ui.form.av;
+      pid = rid();
+      await T.update(code, {[`players/${pid}`]:{name, av:avi, at:Date.now(), seen:Date.now()}});
+    }
+    enter(code, pid);
+  } catch { setErr("Couldn’t reach the server. Check your connection and try again."); }
+  ui.busy = false; render();
+}
+function enter(code, pid){
+  me = {code, pid};
+  sessionStorage.setItem("cg:me", JSON.stringify(me));
+  ui.mode = "room"; ui.err = ""; S = null;
+  history.replaceState(null, "", location.href.split(/[?#]/)[0] + "?room=" + code);
+  connect();
+}
+function connect(){
+  if (unsub) unsub();
+  unsub = T.subscribe(me.code, st => {
+    S = st;
+    if (!st){ leave("That room doesn’t exist anymore."); return; }
+    render();
+  });
+  clearInterval(pingTimer);
+  pingTimer = setInterval(ping, 20000);
+}
+function ping(){
+  if (!me.code || !P(me.pid)) return;
+  const u = {[`players/${me.pid}/seen`]:Date.now()};
+  S = applyUpdates(S, u);
+  T.update(me.code, u).catch(() => {});
+  render();
+}
+document.addEventListener("visibilitychange", () => { if (!document.hidden) ping(); });
+function leave(msg = ""){
+  if (unsub) unsub(); unsub = null; clearInterval(pingTimer);
+  sessionStorage.removeItem("cg:me");
+  me = {code:null, pid:null}; S = null;
+  ui.mode = "landing"; ui.err = msg; ui.revealStarted = ui.revealedFor = null; ui.animating = false;
+  history.replaceState(null, "", location.href.split(/[?#]/)[0]);
+  render();
+}
+function setErr(m){ ui.err = m; render(); }
+
+/* ---------------- game logic ---------------- */
+function toggleVote(id){
+  const mine = myVotes();
+  if (mine.includes(id)) commit({[`votes/${me.pid}/${id}`]:null});
+  else if (mine.length < 2) commit({[`votes/${me.pid}/${id}`]:true});
+  else toast("Both votes are used. Click a topic you picked to take the vote back.");
+}
+function revealWinner(){
+  const t = tallies(), max = Math.max(0, ...Object.values(t));
+  const top = THEMES.filter(x => (t[x.id] || 0) === max).map(x => x.id);
+  const winner = top[Math.floor(Math.random() * top.length)];
+  commit({stage:"reveal", theme:winner, tie:top.length > 1 ? top : null, revealAt:Date.now()});
+}
+function pickPeople(n, exclude = []){
+  const ps = players();
+  let pool = ps.filter(p => present(p.id) && !exclude.includes(p.id));
+  if (pool.length < n) pool = ps.filter(p => !exclude.includes(p.id));
+  const sp = S.spoken || {};
+  return shuffle(pool, Math.random).sort((a, b) => (sp[a.id] || 0) - (sp[b.id] || 0)).slice(0, n).map(p => p.id);
+}
+function roundUpdates(r, qi){
+  if (r >= ROUNDS) return {stage:"hot", h:{i:0, revealed:false}};
+  let mode = MODES[r % MODES.length];
+  if (mode === "pair" && players().length < 2) mode = "spark";
+  const d = {r, qi, mode, phase:"answer"};
+  const u = {};
+  if (mode === "all"){ u.deep = d; return u; }
+  const ids = pickPeople(mode === "pair" ? 2 : 1);
+  d.turn = ids[0];
+  u[`spoken/${ids[0]}`] = (S.spoken?.[ids[0]] || 0) + 1;
+  if (mode === "pair" && ids[1]){
+    d.partner = ids[1];
+    u[`spoken/${ids[1]}`] = (S.spoken?.[ids[1]] || 0) + 1;
+    u[`links/${rid("l")}`] = {from:ids[0], to:ids[1], kind:"pair"};
+  }
+  u.deep = d;
+  return u;
+}
+const canAct = () => { const d = S.deep; return isHost() || (d.mode !== "all" && (me.pid === d.turn || me.pid === d.partner)); };
+
+function act(a, arg){
+  switch (a){
+    case "tab": ui.tab = arg; ui.err = ""; render(); if (arg === "join") lookupRoom(); break;
+    case "av": if (ui.tab === "join" && ui.taken.includes(+arg)) break; ui.form.av = +arg; render(); break;
+    case "exp": ui.form.expected = Math.min(18, Math.max(2, ui.form.expected + +arg)); render(); break;
+    case "create": createRoom(); break;
+    case "join": joinRoom(); break;
+    case "copyLink": copy(inviteLink()); toast("Invite link copied"); break;
+    case "copyCode": copy(me.code); toast("Room code copied"); break;
+    case "leave": leave(); break;
+    case "start": commit({stage:"vote"}); break;
+    case "vote": toggleVote(arg); break;
+    case "reveal": revealWinner(); break;
+    case "toWarm": commit({stage:"warmup", w:{i:0, revealed:false}}); break;
+    case "pick": if (!S.w.revealed) commit({[`answers/q${S.w.i}/${me.pid}`]:arg}); break;
+    case "showRes": commit({"w/revealed":true}); break;
+    case "nextPair": {
+      const i = S.w.i;
+      if (i < THEME(S.theme).pairs.length - 1) commit({w:{i:i + 1, revealed:false}});
+      else commit({stage:"deep", ...roundUpdates(0, 0)});
+      break;
+    }
+    case "toPass": ui.target = null; commit({"deep/phase":"pass"}); break;
+    case "target": ui.target = arg; render(); break;
+    case "sendPass": {
+      const d = S.deep, text = (ui.f.follow || "").trim().slice(0, 160), to = ui.target;
+      if (!to) return;
+      ui.target = null; ui.f.follow = "";
+      commit({"deep/turn":to, "deep/phase":"follow", "deep/follow":{from:d.turn, text}, [`spoken/${to}`]:(S.spoken?.[to] || 0) + 1, [`links/${rid("l")}`]:{from:d.turn, to, kind:"spark", ask:text ? 1 : 0}});
+      break;
+    }
+    case "swap": commit({"deep/qi":S.deep.qi + 1}); break;
+    case "next": ui.target = null; commit(roundUpdates(S.deep.r + 1, S.deep.qi + 1)); break;
+    case "toHot": commit({stage:"hot", h:{i:0, revealed:false}}); break;
+    case "rate": if (!S.h?.revealed) commit({[`rates/q${S.h.i}/${me.pid}`]:+arg}); break;
+    case "showHot": commit({"h/revealed":true}); break;
+    case "nextHot": { const i = S.h.i; if (i < HOT_N - 1) commit({h:{i:i + 1, revealed:false}}); else commit({stage:"closing"}); break; }
+    case "toClosing": commit({stage:"closing"}); break;
+    case "noteTo": ui.noteTo = arg; render(); break;
+    case "sendNote": {
+      const text = (ui.f.note || "").trim().slice(0, 140);
+      if (!ui.noteTo || !text) return;
+      const el = document.querySelector('[data-keep="note"]'); if (el) el.value = "";
+      ui.f.note = ""; const to = ui.noteTo; ui.noteTo = null;
+      commit({[`notes/${rid("n")}`]:{from:me.pid, to, text, t:Date.now()}});
+      toast("Note sent");
+      break;
+    }
+    case "finish": commit({stage:"end"}); break;
+    case "copySummary": copy(summaryText()); toast("Summary copied"); break;
+  }
+}
+document.addEventListener("click", e => { const el = e.target.closest("[data-act]"); if (el && !el.disabled) act(el.dataset.act, el.dataset.arg); });
+document.addEventListener("input", e => {
+  const k = e.target.dataset?.keep; if (!k) return;
+  ui.f[k] = e.target.value;
+  if (k === "code"){ ui.room = null; lookupRoom(); }
+  if (k === "note"){
+    const b = $("#sendNote"); if (b) b.disabled = !(ui.noteTo && ui.f.note.trim());
+    const c = $("#noteCount"); if (c) c.textContent = ui.f.note.length + "/140";
+  }
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter" && !e.shiftKey && e.target.matches("input[data-keep]")){
+    e.preventDefault(); act(ui.tab === "host" ? "create" : "join");
+  }
+});
+
+/* ---------------- derived: meter, constellation, badges ---------------- */
+function meter(){
+  if (!S) return 0;
+  const N = Math.max(players().length, 1);
+  let pts = 0;
+  for (const v of Object.values(S.votes || {})) pts += Object.keys(v || {}).length;
+  for (const q of Object.values(S.answers || {})) pts += Object.keys(q || {}).length;
+  for (const q of Object.values(S.rates || {})) pts += Object.keys(q || {}).length;
+  pts += Object.keys(S.links || {}).length * 2 + Object.keys(S.notes || {}).length * 2;
+  if (S.deep) pts += (S.deep.r || 0) * 2;
+  return Math.min(1, pts / (N * 16));
+}
+function constellation(size){
+  const ps = players(), n = ps.length, c = size / 2, R = size * 0.36, ns = size * 0.12;
+  const pos = {};
+  ps.forEach((p, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / Math.max(n, 1); pos[p.id] = [c + (n > 1 ? R * Math.cos(a) : 0), c + (n > 1 ? R * Math.sin(a) : 0)]; });
+  const w = {};
+  const add = (f, t) => { if (!pos[f] || !pos[t] || f === t) return; const k = [f, t].sort().join("|"); w[k] = (w[k] || 0) + 1; };
+  Object.values(S.links || {}).forEach(l => add(l.from, l.to));
+  Object.values(S.notes || {}).forEach(l => add(l.from, l.to));
+  const lines = Object.entries(w).map(([k, v]) => { const [a, b] = k.split("|"); return `<line class="edge" x1="${pos[a][0]}" y1="${pos[a][1]}" x2="${pos[b][0]}" y2="${pos[b][1]}" stroke-width="${1 + Math.min(v, 5) * 0.9}"/>`; }).join("");
+  const nodes = ps.map(p => `<g transform="translate(${pos[p.id][0] - ns / 2} ${pos[p.id][1] - ns / 2}) scale(${ns / 32})" style="color:${COLORS[p.av % 18]}"><title>${esc(p.name)}</title>${shape(p.av)}</g>`).join("");
+  return `<svg class="cons" viewBox="0 0 ${size} ${size}" width="${size}" height="${size}" role="img" aria-label="Connections between team members"><circle cx="${c}" cy="${c}" r="${R}" fill="none" stroke="rgba(28,26,43,.1)" stroke-dasharray="2 6"/>${lines}${nodes}</svg>`;
+}
+function stats(){
+  const ps = players(), st = {};
+  ps.forEach(p => st[p.id] = {turns:S.spoken?.[p.id] || 0, asks:0, passes:0, minority:0, got:0, sent:0});
+  Object.values(S.links || {}).forEach(l => { if (!st[l.from]) return; if (l.kind === "spark"){ st[l.from].passes++; if (l.ask) st[l.from].asks++; } else st[l.from].passes++; });
+  Object.values(S.notes || {}).forEach(n => { if (st[n.from]) st[n.from].sent++; if (st[n.to]) st[n.to].got++; });
+  Object.values(S.answers || {}).forEach(q => {
+    const vals = Object.values(q || {}), a = vals.filter(v => v === "a").length, b = vals.filter(v => v === "b").length;
+    if (a === b) return;
+    Object.entries(q || {}).forEach(([pid, v]) => { if (st[pid] && ((v === "a" && a < b) || (v === "b" && b < a))) st[pid].minority++; });
+  });
+  Object.values(S.rates || {}).forEach(q => {
+    const e = Object.entries(q || {}); if (e.length < 3) return;
+    const avg = e.reduce((a, [, v]) => a + +v, 0) / e.length;
+    e.forEach(([pid, v]) => { if (st[pid] && Math.abs(+v - avg) >= 1.5) st[pid].minority++; });
+  });
+  return st;
+}
+const BADGES = [
+  ["The storyteller","Spoke the most", s => s.turns],
+  ["The curious one","Asked the follow-up questions", s => s.asks],
+  ["The wild card","Often picked the other side", s => s.minority],
+  ["The connector","Kept the spark moving", s => s.passes],
+  ["The MVP","Got the most thanks", s => s.got],
+  ["The cheerleader","Wrote the most thank-you notes", s => s.sent]
+];
+function badges(){
+  const ps = players(), st = stats(), taken = new Set(), out = {};
+  for (const [name, desc, fn] of BADGES){
+    const best = ps.filter(p => !taken.has(p.id)).sort((a, b) => fn(st[b.id]) - fn(st[a.id]))[0];
+    if (best && fn(st[best.id]) > 0){ out[best.id] = [name, desc]; taken.add(best.id); }
+  }
+  ps.forEach(p => { if (!out[p.id]) out[p.id] = ["The calm one","Kept the team relaxed"]; });
+  return out;
+}
+function counts(){
+  return {people:players().length, cards:Math.min(S.deep?.r != null ? S.deep.r + 1 : 0, ROUNDS), sparks:Object.values(S.links || {}).filter(l => l.kind === "spark").length, notes:Object.keys(S.notes || {}).length};
+}
+function summaryText(){
+  const th = THEME(S.theme), b = badges(), c = counts();
+  return `Open tabs: ${th?.name || ""}\n${c.people} people, ${c.cards} cards, ${c.sparks} sparks, ${c.notes} notes\n\n` + players().map(p => `${p.name}: ${b[p.id][0]}`).join("\n");
+}
+
+/* ---------------- views ---------------- */
+function heroArt(){
+  const pts = [[60,70],[170,30],[290,60],[380,140],[320,220],[200,190],[90,210],[40,140]];
+  const edges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[1,5],[2,4],[0,5],[3,5]];
+  const ls = edges.map(([a, b], i) => `<line class="edge" pathLength="1" x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" style="--d:${.4 + i * .09}s"/>`).join("");
+  const ns = pts.map(([x, y], i) => `<g transform="translate(${x - 19} ${y - 19}) scale(${38 / 32})"><g class="node" style="color:${COLORS[i]};--d:${i * .08}s">${shape(i)}</g></g>`).join("");
+  return `<svg class="art" viewBox="0 0 420 260" aria-hidden="true">${ls}${ns}</svg>`;
+}
+function viewLanding(fresh){
+  const f = ui.f, host = ui.tab === "host";
+  return `<div class="wrap landing ${fresh ? "fresh" : ""}">
+    <div class="hero">
+      <h1 class="h1">45 minutes of good ideas and good conversation.</h1>
+      <p class="lede">Vote on a topic, play a few rounds and let the talk flow. Everyone joins from their own laptop, from anywhere.</p>
+      ${heroArt()}
+    </div>
+    <div class="panel">
+      <div class="tabs" role="tablist">
+        <button role="tab" class="${host ? "on" : ""}" data-act="tab" data-arg="host">Host a session</button>
+        <button role="tab" class="${host ? "" : "on"}" data-act="tab" data-arg="join">Join with a code</button>
+      </div>
+      ${host ? "" : `<label>Room code<input type="text" class="code" data-keep="code" maxlength="4" value="${esc(f.code)}" autocomplete="off" placeholder="ABCD">${ui.room && ui.room.code === f.code.trim().toUpperCase() ? `<span class="hintline">${ui.room.ok ? "Room found. Animals that are taken are dimmed." : "We couldn’t find a room with this code."}</span>` : ""}</label>`}
+      <label>Your name<input type="text" data-keep="name" maxlength="20" value="${esc(f.name)}" autocomplete="off" placeholder="How should we call you?"></label>
+      ${host ? `<div class="lbl">How many people are playing?<div class="stepper"><button data-act="exp" data-arg="-1" aria-label="Fewer people">−</button><output>${ui.form.expected}</output><button data-act="exp" data-arg="1" aria-label="More people">+</button></div></div>` : ""}
+      <div class="lbl">Pick your animal<div class="avs">${ANIMALS.map((a, i) => { const tk = !host && ui.taken.includes(i); return `<button class="${ui.form.av === i ? "on" : ""} ${tk ? "taken" : ""}" data-act="av" data-arg="${i}" aria-pressed="${ui.form.av === i}" ${tk ? "disabled" : ""} title="${tk ? a.name + " is already taken" : a.name}">${av(i, 34)}<span>${tk ? "Taken" : a.name}</span></button>`; }).join("")}</div><span class="you">You’re the ${animalName(ui.form.av)}.</span></div>
+      ${ui.err ? `<p class="err" role="alert">${esc(ui.err)}</p>` : ""}
+      <button class="btn" data-act="${host ? "create" : "join"}" ${ui.busy ? "disabled" : ""}>${host ? "Create room" : "Join room"}</button>
+    </div>
+    ${DEMO ? `<p class="demo">Demo mode: sessions only sync between tabs of this browser. Add your Firebase URL in index.html to let people join from anywhere.</p>` : ""}
+  </div>`;
+}
+
+function viewLobby(fresh){
+  const ps = players(), exp = Math.max(S.expected || 0, ps.length);
+  const minPlayers = DEMO ? 1 : 2;
+  const slots = Array.from({length:exp}, (_, i) => ps[i]
+    ? `<div class="slot"><div class="disc">${av(ps[i].av, 46)}</div><b>${esc(ps[i].name)}</b><small>${animalName(ps[i].av)}</small></div>`
+    : `<div class="slot empty"><div class="disc"></div><span>Waiting</span></div>`).join("");
+  const full = ps.length >= (S.expected || 0);
+  return `<div class="wrap center ${fresh ? "fresh" : ""}">
+    <h1 class="h2">${full ? "Everyone’s here." : "Waiting for the team."}</h1>
+    <p class="sub" style="margin-inline:auto">Share this code, or send the invite link in your call chat.</p>
+    <div class="bigcode">${esc(me.code)}</div>
+    <div class="actions" style="margin-top:12px">
+      <button class="btn ghost sm" data-act="copyLink">Copy invite link</button>
+      <button class="btn ghost sm" data-act="copyCode">Copy code</button>
+    </div>
+    <div class="slots">${slots}</div>
+    <div class="actions">
+      ${isHost() ? `<button class="btn ${full ? "glow" : ""}" data-act="start" ${ps.length < minPlayers ? "disabled" : ""}>Start session</button>` : `<p class="wait">${nm(S.hostId)} will start the session.</p>`}
+    </div>
+    <div class="plan"><span>Vote, 5 min</span><span>Warm-up, 7 min</span><span>Deep dive, 15 min</span><span>Hot or not, 8 min</span><span>Closing, 5 min</span></div>
+  </div>`;
+}
+
+function viewVote(fresh){
+  const t = tallies(), mine = new Set(myVotes()), ps = players();
+  const voted = ps.filter(p => Object.keys(S.votes?.[p.id] || {}).length > 0).length;
+  const all = voted === ps.length && ps.length > 0;
+  const cards = THEMES.map((th, i) => `<button class="tcard ${mine.has(th.id) ? "on" : ""}" data-act="vote" data-arg="${th.id}" aria-pressed="${mine.has(th.id)}">
+      ${glyph(i)}<span class="tname">${th.name}</span><span class="ttag">${th.tag}</span>
+      <span class="tdots">${"<i></i>".repeat(t[th.id] || 0)}</span></button>`).join("");
+  return `<div class="wrap center ${fresh ? "fresh" : ""}">
+    <h1 class="h2">What should we talk about?</h1>
+    <p class="sub">Click a topic to give it a vote. Click again to take it back.</p>
+    <div class="tgrid">${cards}</div>
+    <div class="votebar">
+      <span class="pips" aria-label="${2 - mine.size} votes left"><i class="${mine.size > 0 ? "full" : ""}"></i><i class="${mine.size > 1 ? "full" : ""}"></i></span>
+      <span>${2 - mine.size} ${2 - mine.size === 1 ? "vote" : "votes"} left</span>
+      <span>${voted} of ${ps.length} have voted</span>
+    </div>
+    <div class="actions" style="margin-top:20px">
+      ${isHost() ? `<button class="btn ${all ? "glow" : ""}" data-act="reveal" ${voted === 0 ? "disabled" : ""}>Reveal the topic</button>` : `<p class="wait">${nm(S.hostId)} reveals the topic when everyone has voted.</p>`}
+    </div>
+  </div>`;
+}
+
+function viewReveal(fresh){
+  const th = THEME(S.theme), done = ui.revealedFor === S.revealAt || reduced;
+  if (!done){
+    return `<div class="wrap spinwrap"><p class="sub" style="margin:0 auto">${S.tie ? "It’s a tie. Spinning to decide…" : "Counting the votes…"}</p><div class="spin" id="spin">&nbsp;</div></div>`;
+  }
+  return `<div class="wrap center landed-theme">
+    ${glyph(themeIdx(th.id))}
+    <p class="sub" style="margin:0 auto 10px">The team chose</p>
+    <div class="spin">${th.name}</div>
+    <p class="lede" style="margin-inline:auto">${th.tag}.</p>
+    ${S.tie ? `<p style="margin-top:18px"><span class="tiebadge">It was a tie, so we spun.</span></p>` : ""}
+    <div class="actions">${isHost() ? `<button class="btn glow" data-act="toWarm">Start the warm-up</button>` : `<p class="wait">${nm(S.hostId)} starts the warm-up.</p>`}</div>
+  </div>`;
+}
+function startReveal(){
+  const id = S.revealAt; ui.revealStarted = id; ui.animating = true;
+  const pool = shuffle(S.tie && S.tie.length > 1 ? S.tie.slice() : THEMES.map(t => t.id), Math.random);
+  const seq = []; for (let i = 0; i < 16; i++) seq.push(pool[i % pool.length]);
+  seq.push(S.theme);
+  let i = 0;
+  const finish = () => { ui.animating = false; ui.revealedFor = id; render(); };
+  const step = () => {
+    const el = $("#spin");
+    if (!el || S?.stage !== "reveal") return finish();
+    el.textContent = THEME(seq[i]).name;
+    el.classList.remove("tick"); void el.offsetWidth; el.classList.add("tick");
+    i++;
+    if (i < seq.length) setTimeout(step, 50 + i * i * 1.1); else setTimeout(finish, 700);
+  };
+  step();
+}
+
+function viewWarmup(fresh){
+  const th = THEME(S.theme), i = S.w?.i || 0, pair = th.pairs[i], ans = S.answers?.[`q${i}`] || {};
+  const revealed = !!S.w?.revealed, ps = players(), mine = ans[me.pid];
+  const cnt = {a:0, b:0}; Object.values(ans).forEach(v => { if (cnt[v] !== undefined) cnt[v]++; });
+  const answered = ps.filter(p => ans[p.id]).length, total = cnt.a + cnt.b;
+  const opt = k => {
+    const who = ps.filter(p => ans[p.id] === k);
+    return `<button class="choice ${mine === k ? "on" : ""} ${revealed ? "res" : ""}" style="--pct:${total ? Math.round(cnt[k] / total * 100) : 0}%" data-act="pick" data-arg="${k}" ${revealed ? "disabled" : ""}>
+      <span class="ct">${pair[k === "a" ? 0 : 1]}</span>
+      <span class="who">${revealed ? `<span class="num">${cnt[k]}</span>${who.map(p => `<span title="${esc(p.name)}">${av(p.av, 24)}</span>`).join("")}${who.length ? `<span>${who.map(p => esc(p.name)).join(", ")}</span>` : ""}` : (mine === k ? "Your pick" : "")}</span>
+    </button>`;
+  };
+  let nudge = "";
+  if (revealed){
+    const small = cnt.a < cnt.b ? "a" : "b", few = ps.filter(p => ans[p.id] === small);
+    if (total === 0) nudge = "Nobody picked this time.";
+    else if (cnt.a === cnt.b) nudge = "A perfect split. Each side, explain your choice.";
+    else if (Math.min(cnt.a, cnt.b) === 0) nudge = ps.length > 2 ? "Everyone agrees. Does anyone see it differently?" : "Same pick. Nice.";
+    else if (few.length === 1) nudge = `${esc(few[0].name)} picked a different side. Can you tell us why?`;
+    else nudge = `${few.map(p => esc(p.name)).join(" and ")} picked the less popular side. Can you tell us why?`;
+  }
+  const last = i >= th.pairs.length - 1;
+  return `<div class="wrap center ${fresh ? "fresh" : ""}">
+    <div class="metaline"><span class="pill">${th.name}</span><span>Pair ${i + 1} of ${th.pairs.length}</span></div>
+    <h1 class="prompt">Which one are you?</h1>
+    <div class="pair">${opt("a")}${opt("b")}</div>
+    ${revealed ? `<p class="nudge">${nudge}</p>` : `<p class="hint">${answered} of ${ps.length} have picked. No pressure to answer, the host can show results anytime.</p>`}
+    <div class="actions">
+      ${isHost()
+        ? (revealed ? `<button class="btn glow" data-act="nextPair">${last ? "On to the deep dive" : "Next pair"}</button>` : `<button class="btn ${answered === ps.length ? "glow" : ""}" data-act="showRes" ${answered === 0 ? "disabled" : ""}>Show results</button>`)
+        : `<p class="wait">${nm(S.hostId)} moves things along.</p>`}
+    </div>
+  </div>`;
+}
+
+function viewDeep(fresh){
+  const d = S.deep, q = deepQ(d.qi), m = MODE[d.mode], can = canAct(), ps = players();
+  const last = d.r >= ROUNDS - 1;
+  let landed = "", body = "", actions = "", hint = m.hint;
+  const key = d.mode === "all" ? "" : "drop";
+  if (d.mode === "all"){
+    landed = `<span>This one’s for everyone.</span>`;
+    body = `<p class="q">${esc(q)}</p>`;
+    actions = isHost() ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Next card"}</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">${nm(S.hostId)} moves to the next card.</p>`;
+  } else if (d.phase === "answer"){
+    landed = d.mode === "pair"
+      ? `${chipId(d.turn, "on")}<span>and</span>${chipId(d.partner, "on")}<span>this one’s for you.</span>`
+      : `${chipId(d.turn, "on")}<span>this one’s for you.</span>`;
+    body = `<p class="q">${esc(q)}</p>`;
+    if (d.mode === "pair") actions = can ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Done, next card"}</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">Listening in…</p>`;
+    else actions = can ? `<button class="btn" data-act="toPass">Pass the spark</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">Listening to ${nm(d.turn)}…</p>`;
+  } else if (d.phase === "pass"){
+    landed = `${chipId(d.turn, "on")}<span>is choosing who gets the spark.</span>`;
+    body = `<p class="q">${esc(q)}</p>`;
+    if (can){
+      const others = ps.filter(p => p.id !== d.turn);
+      actions = `<div class="passbox"><div class="passgrid">${others.map(p => `<button class="pchip ${ui.target === p.id ? "pick" : ""} ${present(p.id) ? "" : "off"}" data-act="target" data-arg="${p.id}">${av(p.av, 22)}<span>${esc(p.name)}</span></button>`).join("")}</div>
+        <label>Add a follow-up question (optional)<textarea data-keep="follow" maxlength="160" placeholder="For example: how did you solve it?">${esc(ui.f.follow)}</textarea></label>
+        <div class="actions" style="margin-top:0"><button class="btn" data-act="sendPass" ${ui.target ? "" : "disabled"}>Pass the spark</button></div></div>`;
+      hint = "Pick someone you want to hear more from.";
+    } else actions = `<p class="wait">Please wait…</p>`;
+  } else {
+    const f = d.follow || {};
+    landed = `<span>${nm(f.from)} passed the spark to</span>${chipId(d.turn, "on")}`;
+    body = `<p class="q small">${esc(q)}</p><p class="q">${f.text ? "“" + esc(f.text) + "”" : "What’s your take?"}</p>`;
+    actions = can ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Done, next card"}</button>` : `<p class="wait">Listening to ${nm(d.turn)}…</p>`;
+    hint = "Everyone else, keep your questions for later.";
+  }
+  return `<div class="wrap center">
+    <div class="deephead"><span class="pill">${m.label}</span><span>Card ${d.r + 1} of ${ROUNDS}</span></div>
+    <div class="landed">${landed}</div>
+    <article class="qcard ${fresh ? key : ""}">${body}</article>
+    <p class="hint">${hint}</p>
+    <div class="actions">${actions}</div>
+    ${isHost() ? `<div class="actions" style="margin-top:6px"><button class="linkbtn" data-act="toHot">Skip to Hot or not</button></div>` : ""}
+  </div>`;
+}
+
+function names(list){ const n = list.map(p => esc(p.name)); return n.length < 2 ? n.join("") : n.slice(0, -1).join(", ") + " and " + n[n.length - 1]; }
+function viewHot(fresh){
+  const i = S.h?.i || 0, text = HOT[hotOrder()[i % HOT.length]], rs = S.rates?.[`q${i}`] || {}, revealed = !!S.h?.revealed, ps = players();
+  const mine = +rs[me.pid], rated = ps.filter(p => rs[p.id]).length;
+  const vals = ps.filter(p => rs[p.id]).map(p => [p, +rs[p.id]]);
+  const avg = vals.length ? vals.reduce((a, [, v]) => a + v, 0) / vals.length : 0;
+  let nudge = "";
+  if (revealed){
+    if (vals.length === 0) nudge = "Nobody rated this one.";
+    else if (vals.length === 1) nudge = "Only one rating this time.";
+    else {
+      const mx = Math.max(...vals.map(v => v[1])), mn = Math.min(...vals.map(v => v[1]));
+      if (mx === mn) nudge = `Everyone gave a ${mx}. Can anyone argue the other side?`;
+      else if (mx - mn >= 2) nudge = `${names(vals.filter(v => v[1] === mx).map(v => v[0]))} gave ${mx}. ${names(vals.filter(v => v[1] === mn).map(v => v[0]))} gave ${mn}. Can you explain your ratings?`;
+      else nudge = "The team mostly agrees. Who can argue the other side?";
+    }
+  }
+  const scale = [1,2,3,4,5].map(n => `<button class="rate ${mine === n ? "on" : ""}" data-act="rate" data-arg="${n}" aria-label="Rate ${n} of 5" aria-pressed="${mine === n}">${n}</button>`).join("");
+  const dist = [1,2,3,4,5].map(n => { const who = vals.filter(v => v[1] === n).map(v => v[0]); return `<div class="dcol"><div class="dav">${who.map(p => `<span title="${esc(p.name)}">${av(p.av, 26)}</span>`).join("")}</div><div class="dnum">${n}</div><div class="dnames">${who.map(p => esc(p.name)).join(", ")}</div></div>`; }).join("");
+  return `<div class="wrap center ${fresh ? "fresh" : ""}">
+    <div class="metaline"><span class="pill">Hot or not</span><span>Statement ${i + 1} of ${HOT_N}</span></div>
+    <article class="qcard ${fresh && !revealed ? "drop" : ""}" style="margin-top:18px"><p class="q">${esc(text)}</p></article>
+    ${revealed
+      ? `<div class="avg"><b>${vals.length ? avg.toFixed(1) : "-"}</b><span>team average</span></div><div class="dist">${dist}</div><p class="nudge">${nudge}</p>`
+      : `<div class="rates">${scale}</div><div class="scalelab"><span>Not</span><span>Hot</span></div><p class="hint">${rated} of ${ps.length} have rated. Pick a number from 1 (not) to 5 (hot).</p>`}
+    <div class="actions">
+      ${isHost()
+        ? (revealed ? `<button class="btn glow" data-act="nextHot">${i >= HOT_N - 1 ? "Go to the closing" : "Next statement"}</button>` : `<button class="btn ${rated === ps.length ? "glow" : ""}" data-act="showHot" ${rated === 0 ? "disabled" : ""}>Show results</button>`)
+        : `<p class="wait">${nm(S.hostId)} moves things along.</p>`}
+    </div>
+    ${isHost() ? `<div class="actions" style="margin-top:6px"><button class="linkbtn" data-act="toClosing">Skip to the closing</button></div>` : ""}
+  </div>`;
+}
+
+function viewClosing(fresh){
+  const ps = players().filter(p => p.id !== me.pid);
+  const notes = Object.values(S.notes || {}).sort((a, b) => (a.t || 0) - (b.t || 0));
+  const ok = ui.noteTo && ui.f.note.trim();
+  return `<div class="wrap center ${fresh ? "fresh" : ""}">
+    <h1 class="h2">Say thanks.</h1>
+    <p class="sub">Write one short line to a teammate. Thank them for something they did or taught you.</p>
+    <div class="compose">
+      <div class="passgrid" style="margin:0">${ps.map(p => `<button class="pchip ${ui.noteTo === p.id ? "pick" : ""}" data-act="noteTo" data-arg="${p.id}">${av(p.av, 22)}<span>${esc(p.name)}</span></button>`).join("")}</div>
+      <textarea data-keep="note" maxlength="140" placeholder="What would you like to say?">${esc(ui.f.note)}</textarea>
+      <div class="count" id="noteCount">${ui.f.note.length}/140</div>
+      <div class="actions" style="margin-top:0"><button class="btn" id="sendNote" data-act="sendNote" ${ok ? "" : "disabled"}>Send note</button></div>
+    </div>
+    ${notes.length ? `<div class="wall">${notes.map(n => `<div class="note"><div class="to">${P(n.to) ? av(P(n.to).av, 22) : ""}<span>To ${nm(n.to)}</span></div><p>${esc(n.text)}</p><small>From ${nm(n.from)}</small></div>`).join("")}</div>` : ""}
+    <div class="actions">${isHost() ? `<button class="btn ghost" data-act="finish">Finish the session</button>` : ""}</div>
+  </div>`;
+}
+
+function viewEnd(fresh){
+  const th = THEME(S.theme), b = badges(), c = counts();
+  return `<div class="wrap ${fresh ? "fresh" : ""}">
+    <div class="summary">
+      <div>
+        ${th ? glyph(themeIdx(th.id)) : ""}
+        <h1 class="h2" style="margin-top:14px">That’s a wrap.</h1>
+        <p class="sub">${esc(th?.name || "")}: ${c.people} ${c.people === 1 ? "person" : "people"}, ${c.cards} ${c.cards === 1 ? "card" : "cards"}, ${c.sparks} ${c.sparks === 1 ? "spark" : "sparks"} passed and ${c.notes} thank-you ${c.notes === 1 ? "note" : "notes"}.</p>
+        <div class="badges">${players().map(p => `<div class="badge">${av(p.av, 30)}<div><b>${esc(p.name)}</b> <span style="color:var(--muted);font-size:.82rem">the ${animalName(p.av)}</span><small>${b[p.id][0]}. ${b[p.id][1]}.</small></div></div>`).join("")}</div>
+        <div class="actions" style="justify-content:flex-start"><button class="btn" data-act="copySummary">Copy summary</button><button class="btn ghost" data-act="leave">Leave room</button></div>
+      </div>
+      ${constellation(300)}
+    </div>
+    <p class="hint">Take a screenshot to remember this one.</p>
+  </div>`;
+}
+
+function viewRoom(fresh){
+  if (!S) return `<div class="wrap center"><p class="lede" style="margin-inline:auto">Connecting…</p></div>`;
+  switch (S.stage){
+    case "lobby": return viewLobby(fresh);
+    case "vote": return viewVote(fresh);
+    case "reveal": return viewReveal(fresh);
+    case "warmup": return viewWarmup(fresh);
+    case "deep": return viewDeep(fresh);
+    case "hot": return viewHot(fresh);
+    case "closing": return viewClosing(fresh);
+    case "end": return viewEnd(fresh);
+  }
+  return "";
+}
+function viewKey(){
+  if (ui.mode === "landing") return "landing" + ui.tab;
+  if (!S) return "connecting";
+  const d = S.deep || {};
+  return [S.stage, S.w?.i, S.w?.revealed, S.h?.i, S.h?.revealed, d.r, d.qi, d.phase, d.turn].join("|");
+}
+
+/* ---------------- render ---------------- */
+function setHTML(el, html){
+  if (el._h === html) return;
+  const a = document.activeElement;
+  let keep = null;
+  if (a && el.contains(a) && a.dataset?.keep) keep = {id:a.dataset.keep, s:a.selectionStart, e:a.selectionEnd};
+  const vals = {};
+  el.querySelectorAll("[data-keep]").forEach(n => vals[n.dataset.keep] = n.value);
+  el.innerHTML = html; el._h = html;
+  el.querySelectorAll("[data-keep]").forEach(n => { if (vals[n.dataset.keep] !== undefined) n.value = vals[n.dataset.keep]; });
+  if (keep){ const n = el.querySelector(`[data-keep="${keep.id}"]`); if (n){ n.focus(); try { n.setSelectionRange(keep.s, keep.e); } catch {} } }
+}
+let lastKey = "";
+function render(){
+  if (ui.animating) return;
+  const inRoom = ui.mode === "room" && S;
+  const stage = ui.mode === "landing" ? "landing" : (S?.stage || "lobby");
+  document.body.dataset.stage = stage;
+  const key = viewKey(), fresh = key !== lastKey; lastKey = key;
+
+  // header
+  const idx = STAGE_IDX[stage] ?? -1;
+  const steps = inRoom ? `<ol class="steps" aria-label="Session progress">${STAGES.map(([id, label], i) => `<li class="${i < idx ? "done" : i === idx ? "now" : ""}">${label}</li>`).join("")}</ol>` : "<div></div>";
+  const right = inRoom ? `<div class="right"><div class="meter"><span><i style="--p:${Math.round(meter() * 100)}%"></i></span>Team connection</div><button class="codechip" data-act="copyCode" title="Copy room code">Room <b>${esc(me.code)}</b></button></div>` : "<div></div>";
+  setHTML($("#top"), `<div class="brand"><svg width="30" height="24" viewBox="0 0 30 24" aria-hidden="true"><rect x="8" y="1.5" width="20" height="13" rx="4" fill="none" stroke="#1C1A2B" stroke-opacity=".3" stroke-width="1.4"/><rect x="4.5" y="5" width="20" height="13" rx="4" fill="#fff" stroke="#1C1A2B" stroke-opacity=".55" stroke-width="1.4"/><rect x="1" y="9" width="20" height="13" rx="4" style="fill:var(--accent);transition:fill .6s"/></svg>Open tabs</div>${steps}${right}`);
+
+  // main
+  setHTML($("#main"), ui.mode === "landing" ? viewLanding(fresh) : viewRoom(fresh));
+  if (inRoom && S.stage === "reveal" && !(ui.revealedFor === S.revealAt || reduced) && ui.revealStarted !== S.revealAt) startReveal();
+  if (inRoom && S.stage === "reveal" && reduced) ui.revealedFor = S.revealAt;
+
+  // footer
+  if (inRoom){
+    const d = S.deep || {}, act = S.stage === "deep" ? (d.mode === "all" ? players().map(p => p.id) : [d.turn, d.partner].filter(Boolean)) : [];
+    const roster = players().map(p => chip(p, `${act.includes(p.id) ? "on" : ""} ${present(p.id) ? "" : "off"} ${p.id === me.pid ? "me" : ""}`).replace("</span></span>", `</span>${p.id === S.hostId ? " <small>host</small>" : ""}</span>`)).join("");
+    setHTML($("#foot"), `<div class="roster">${roster}</div>${constellation(176)}`);
+  } else setHTML($("#foot"), "");
+}
+
+/* ---------------- boot ---------------- */
+(function boot(){
+  const q = new URLSearchParams(location.search).get("room");
+  let saved = null; try { saved = JSON.parse(sessionStorage.getItem("cg:me")); } catch {}
+  if (saved && saved.code && (!q || q.toUpperCase() === saved.code)){ me = saved; ui.mode = "room"; connect(); }
+  else if (q){ ui.tab = "join"; ui.f.code = q.toUpperCase().slice(0, 4); }
+  render();
+  if (ui.mode === "landing" && ui.f.code) lookupRoom();
+})();
+</script>
+</body>
+</html>
