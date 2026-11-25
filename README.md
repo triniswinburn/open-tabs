@@ -2,13 +2,13 @@
 
 A conversation game for remote teams: every question opens one more tab. About 45 minutes, played from each person's own laptop.
 
-Live site: https://pages.git.autodesk.com/swinbut/open-tabs/
+Live site: https://triniswinburn.github.io/open-tabs/
 
 Flow: lobby, topic vote, warm-up (this or that), deep dive (cards and sparks), hot or not (rate tech statements from 1 to 5), closing (thank-you notes), summary.
 
 To add or change the hot or not statements, edit the `HOT` list near the top of the script in `index.html`.
 
-It's a single static file (`index.html`), so it runs on GitHub Pages (here, the Autodesk internal GitHub Pages). Real-time sync uses Firebase Realtime Database through its REST API (no SDK, no build step).
+It's a single static file (`index.html`), so it runs on GitHub Pages. Real-time sync uses Firebase Realtime Database through its REST API (no SDK, no build step).
 
 ## Try it now (demo mode)
 
@@ -38,7 +38,7 @@ Open `index.html` in two tabs of the same browser. Host in one, join with the co
 
 1. Create a repo and push `index.html` and this README. Everything else (including the favicon) is inside `index.html`.
 2. Settings, Pages, Deploy from a branch, `main`, `/ (root)`.
-3. Share the Pages URL (here: `https://pages.git.autodesk.com/swinbut/open-tabs/`).
+3. Share the Pages URL (here: https://triniswinburn.github.io/open-tabs/).
 
 ## Running a session
 
