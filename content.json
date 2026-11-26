@@ -1,0 +1,398 @@
+{
+  "version": "2026-11-26",
+  "note": "Order matters: the oldest items come first. The monthly update replaces the oldest items.",
+  "themes": [
+    {
+      "id": "ai",
+      "name": "AI at work",
+      "tag": "How we use it, and what we learn",
+      "pairs": [
+        [
+          "AI writes the first draft",
+          "I write the first draft"
+        ],
+        [
+          "Ask AI first",
+          "Search the web first"
+        ],
+        [
+          "Trust the answer",
+          "Always double-check"
+        ],
+        [
+          "AI for ideas",
+          "AI for boring tasks"
+        ],
+        [
+          "Chat with AI",
+          "Automate with AI"
+        ]
+      ],
+      "deep": [
+        "What is one task AI does for you now that you used to do by hand?",
+        "What is the best prompt or trick you have learned? Share it with us.",
+        "When did AI give you a wrong answer? How did you notice?",
+        "What would you never let AI do for you, even if it could?",
+        "Which AI tool do you use that most of us may not know?",
+        "How do you think AI will change your job in two years?",
+        "What is one thing you would automate tomorrow if you could?",
+        "What is a task you tried with AI that did not work at all?",
+        "How do you check that an AI answer is right?",
+        "What would make you trust AI more at work?",
+        "What is the most fun thing you have done with AI?",
+        "What is one AI skill you want to get better at?"
+      ],
+      "hot": [
+        "Most AI agents today are impressive demos, not reliable products.",
+        "In five years, most first drafts of code, docs and designs will come from AI.",
+        "Open models will beat closed models for most business uses.",
+        "AI will make junior roles harder to find, not easier.",
+        "Rules and regulation will shape AI more than technology will.",
+        "We should always say when AI helped write something."
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "Tech we love",
+      "tag": "Tools, gadgets and tricks",
+      "pairs": [
+        [
+          "Dark mode",
+          "Light mode"
+        ],
+        [
+          "Keyboard shortcuts",
+          "Mouse and menus"
+        ],
+        [
+          "One big screen",
+          "Two or more screens"
+        ],
+        [
+          "Early adopter",
+          "Wait for version two"
+        ],
+        [
+          "Phone",
+          "Laptop"
+        ]
+      ],
+      "deep": [
+        "What is the one app or tool you could not work without?",
+        "What is a keyboard shortcut or small trick that saves you time?",
+        "What is the best piece of tech you ever bought?",
+        "What old technology do you miss?",
+        "What new technology are you most excited about right now?",
+        "What tool did you try and then stop using? Why?",
+        "What is one tech trend you think is overhyped?",
+        "What gadget on your desk would you miss the most?",
+        "How do you use tech to stay focused?",
+        "What setting or feature do you think too few people use?",
+        "What is the best tech purchase you made for under 50 dollars?",
+        "What tool or app do you wish existed?"
+      ],
+      "hot": [
+        "Most dashboards are built once and never used again.",
+        "Most companies should buy tools, not build them.",
+        "Real-time collaboration tools have made us worse at deep work.",
+        "Most security problems are people problems, not technical problems.",
+        "Dark mode is better for everything.",
+        "We have too many tools and not enough habits."
+      ]
+    },
+    {
+      "id": "lessons",
+      "name": "Lessons from work",
+      "tag": "Mistakes, fixes and what we learned",
+      "pairs": [
+        [
+          "Learn by doing",
+          "Learn by watching"
+        ],
+        [
+          "Move fast",
+          "Plan carefully"
+        ],
+        [
+          "Ask for help early",
+          "Try alone first"
+        ],
+        [
+          "Feedback right away",
+          "Feedback in writing"
+        ],
+        [
+          "Learn from mistakes",
+          "Learn from wins"
+        ]
+      ],
+      "deep": [
+        "What is a work mistake that taught you a lot?",
+        "What is the best advice you got early in your career?",
+        "When did asking for help change the result of a project?",
+        "Which project did not go as planned? What would you do differently?",
+        "What feedback was hard to hear but turned out to be right?",
+        "What would you tell a new teammate on their first day?",
+        "What is a skill you wish you had learned sooner?",
+        "What is a habit that made you better at your job?",
+        "When did you say no, and it turned out to be the right call?",
+        "What did you learn from a teammate who is very different from you?",
+        "What is a lesson you keep having to learn again?",
+        "What would you do differently in your first year at work?"
+      ],
+      "hot": [
+        "Technical debt is mostly a communication problem, not a code problem.",
+        "Estimating work in hours or points is mostly guessing.",
+        "A good prototype is worth more than a good spec.",
+        "Failing fast is only useful if you write down what you learned.",
+        "Most project delays start in the first week.",
+        "The best feedback is a little uncomfortable."
+      ]
+    },
+    {
+      "id": "learn",
+      "name": "Learning and skills",
+      "tag": "How we keep growing",
+      "pairs": [
+        [
+          "Video course",
+          "Book or article"
+        ],
+        [
+          "Go deep on one thing",
+          "Learn many things a little"
+        ],
+        [
+          "Learn alone",
+          "Learn in a group"
+        ],
+        [
+          "Teach others",
+          "Learn from others"
+        ],
+        [
+          "Short daily practice",
+          "Long focused sessions"
+        ]
+      ],
+      "deep": [
+        "What is the last thing you learned that made you proud?",
+        "What is the best course, book, video or podcast you found for work?",
+        "What skill do you want to learn this year?",
+        "How do you learn something new fast?",
+        "Who at work taught you something important?",
+        "What do you know well enough to teach in ten minutes?",
+        "What topic could you read about for hours?",
+        "What is something you taught yourself that surprised you?",
+        "What is the hardest thing you have learned so far?",
+        "What do you do when you feel stuck while learning?",
+        "Which mentor or teacher do you still think about?",
+        "What would you learn if you had a month off?"
+      ],
+      "hot": [
+        "Most work training is a waste of time.",
+        "You learn more from a bad project than from a good course.",
+        "Everyone at work should learn a little coding.",
+        "Writing well will matter more than coding well in ten years.",
+        "Teaching a topic is the fastest way to learn it.",
+        "A portfolio of real work matters more than certificates."
+      ]
+    },
+    {
+      "id": "hot",
+      "name": "Hot takes",
+      "tag": "Strong opinions about work and tech",
+      "pairs": [
+        [
+          "Shorter meetings",
+          "Meetings are fine"
+        ],
+        [
+          "Camera on",
+          "Camera optional"
+        ],
+        [
+          "Email",
+          "Chat"
+        ],
+        [
+          "Remote first",
+          "Office first"
+        ],
+        [
+          "Documents",
+          "Slides"
+        ]
+      ],
+      "deep": [
+        "What is a work opinion that many people disagree with?",
+        "Which tech trend do you think is overhyped?",
+        "What meeting habit would you remove today?",
+        "What is one rule at work that you would change?",
+        "What did you change your mind about in the last year?",
+        "What is the best way to give feedback, in your view?",
+        "Which buzzword would you ban?",
+        "What popular work advice do you think is wrong?",
+        "What small thing annoys you at work?",
+        "What tradition at work would you happily end?",
+        "What trend do you secretly like, even if it is not cool?",
+        "What is the most overrated skill at work?"
+      ],
+      "hot": [
+        "Most meetings should be an email.",
+        "Cameras on make meetings better.",
+        "Product teams ship too many features and fix too few problems.",
+        "Slides are a bad way to share ideas.",
+        "Open-plan offices are bad for focus.",
+        "Chat is where good ideas go to disappear."
+      ]
+    },
+    {
+      "id": "adventure",
+      "name": "Adventures",
+      "tag": "Trips, challenges and new places",
+      "pairs": [
+        [
+          "Beach",
+          "Mountains"
+        ],
+        [
+          "Plan every detail",
+          "Go with the flow"
+        ],
+        [
+          "Big city trip",
+          "Nature trip"
+        ],
+        [
+          "Try the local food",
+          "Find food you know"
+        ],
+        [
+          "Travel alone",
+          "Travel with a group"
+        ]
+      ],
+      "deep": [
+        "What is the best trip you have ever taken?",
+        "What is the most unusual place you have visited?",
+        "What is one place you really want to see?",
+        "What is the most adventurous thing you have done?",
+        "What is the best travel tip you can share?",
+        "What food did you try while traveling that surprised you?",
+        "If our team could take a trip together, where would you go?",
+        "What is your favorite place to go back to?",
+        "What was your biggest travel mishap?",
+        "What would you pack if you could only take one bag?",
+        "What is the best meal you had on a trip?",
+        "What local custom did you love discovering?"
+      ],
+      "hot": [
+        "Planning a trip is half the fun.",
+        "The best trips are the ones that go wrong.",
+        "Solo travel teaches you more than group travel.",
+        "Staying in one place beats visiting five cities in five days.",
+        "Tourist spots are popular for a reason.",
+        "Everyone should live in another country for a year."
+      ]
+    },
+    {
+      "id": "recs",
+      "name": "Recommendations",
+      "tag": "Books, shows, podcasts and more",
+      "pairs": [
+        [
+          "Book",
+          "Movie"
+        ],
+        [
+          "Podcast",
+          "Playlist"
+        ],
+        [
+          "Binge a series",
+          "Watch one film"
+        ],
+        [
+          "Read the book first",
+          "Watch the movie first"
+        ],
+        [
+          "Audiobook",
+          "Paper book"
+        ]
+      ],
+      "deep": [
+        "What book would you recommend to this team?",
+        "What podcast or channel do you follow, for work or for fun?",
+        "What show or movie did you enjoy lately?",
+        "What is a game you love?",
+        "What is the best thing you read or watched this year?",
+        "What music or playlist helps you focus?",
+        "What small app or website do you think everyone should know?",
+        "What song do you never skip?",
+        "What book have you read more than once?",
+        "What documentary or video taught you something new?",
+        "What is a hidden gem you want more people to know about?",
+        "What do you watch or listen to when you need to relax?"
+      ],
+      "hot": [
+        "The book is almost always better than the movie.",
+        "Most series should end one season earlier.",
+        "Audiobooks count as reading.",
+        "Background music helps you focus.",
+        "Nobody needs more than one streaming service.",
+        "Rewatching your favorites beats trying something new."
+      ]
+    },
+    {
+      "id": "ideas",
+      "name": "Ideas and innovation",
+      "tag": "What if, and what is next",
+      "pairs": [
+        [
+          "Big idea, long time",
+          "Small idea, fast"
+        ],
+        [
+          "Invent something new",
+          "Improve something old"
+        ],
+        [
+          "Brainstorm together",
+          "Think alone first"
+        ],
+        [
+          "Prototype first",
+          "Research first"
+        ],
+        [
+          "Follow the data",
+          "Follow your instinct"
+        ]
+      ],
+      "deep": [
+        "What problem at work would you love to solve?",
+        "If you had a free week to build anything, what would you build?",
+        "Which product or service do you think is really well designed?",
+        "Which process on our team could be much simpler?",
+        "Which technology do you think will change the world in ten years?",
+        "What is a bold idea you have never shared?",
+        "What would help our team work better together?",
+        "What is the best idea you ever had that went nowhere?",
+        "What everyday thing would you redesign?",
+        "Who is the most creative person you know? What do they do?",
+        "What would you invent to make Mondays better?",
+        "What idea from another industry could we borrow?"
+      ],
+      "hot": [
+        "Constraints make people more creative, not less.",
+        "Thinking alone first beats brainstorming as a group.",
+        "Most good ideas are small improvements, not big inventions.",
+        "The best ideas sound obvious once someone says them.",
+        "Following the data too closely kills bold ideas.",
+        "Every team should get a free week each quarter to try wild ideas."
+      ]
+    }
+  ]
+}

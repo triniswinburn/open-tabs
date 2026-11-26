@@ -283,7 +283,7 @@ const FIREBASE_URL = "https://open-tabs-tsc-default-rtdb.firebaseio.com";
 const DEMO = !FIREBASE_URL;
 
 /* ---------------- content ---------------- */
-const THEMES = [
+let THEMES = [   /* fallback copy. The live content is loaded from content.json */
   {id:"ai", name:"AI at work", tag:"How we use it, and what we learn",
    pairs:[["AI writes the first draft","I write the first draft"],["Ask AI first","Search the web first"],["Trust the answer","Always double-check"],["AI for ideas","AI for boring tasks"],["Chat with AI","Automate with AI"]],
    deep:["What is one task AI does for you now that you used to do by hand?","What is the best prompt or trick you have learned? Share it with us.","When did AI give you a wrong answer? How did you notice?","What would you never let AI do for you, even if it could?","Which AI tool do you use that most of us may not know?","How do you think AI will change your job in two years?","What is one thing you would automate tomorrow if you could?","What is a task you tried with AI that did not work at all?","How do you check that an AI answer is right?","What would make you trust AI more at work?","What is the most fun thing you have done with AI?","What is one AI skill you want to get better at?"],
@@ -350,6 +350,28 @@ const ANIMALS = [
 ];
 const COLORS = ANIMALS.map(a => a.color);
 const ALL_AV = ANIMALS.map((_, i) => i);
+
+/* ---------------- content loading ---------------- */
+const FALLBACK_IDS = THEMES.map(t => t.id).join();
+const okStr = (x, max) => typeof x === "string" && x.length > 0 && x.length <= max;
+function validContent(j){
+  const ts = j && j.themes;
+  if (!Array.isArray(ts) || ts.map(t => t && t.id).join() !== FALLBACK_IDS) return false;
+  return ts.every(t => okStr(t.name, 40) && okStr(t.tag, 80)
+    && Array.isArray(t.pairs) && t.pairs.length >= 5 && t.pairs.every(p => Array.isArray(p) && p.length === 2 && okStr(p[0], 60) && okStr(p[1], 60))
+    && Array.isArray(t.deep) && t.deep.length >= ROUNDS + 2 && t.deep.every(x => okStr(x, 200))
+    && Array.isArray(t.hot) && t.hot.length >= HOT_N + 1 && t.hot.every(x => okStr(x, 200)));
+}
+async function loadContent(){
+  try {
+    const ctl = new AbortController(), timer = setTimeout(() => ctl.abort(), 3500);
+    const r = await fetch("content.json", {cache:"no-cache", signal:ctl.signal});
+    clearTimeout(timer);
+    if (!r.ok) return;
+    const j = await r.json();
+    if (validContent(j)) THEMES = j.themes;
+  } catch {}
+}
 
 /* ---------------- visual atoms ---------------- */
 const shape = i => { const a = ANIMALS[i % 18]; return `<circle cx="16" cy="16" r="16" fill="${a.color}"/><g transform="translate(16 16) scale(.7) translate(-16 -16)" fill="none" stroke="#1C1A2B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${a.svg}</g>`; };
@@ -505,6 +527,7 @@ async function createRoom(){
     const pid = rid();
     await T.update(code, {hostId:pid, expected:ui.form.expected, stage:"lobby", created:Date.now(), players:{[pid]:{name:f.name.trim().slice(0, 20), av:ui.form.av, at:Date.now(), seen:Date.now()}}});
     rememberRoom(code);
+    await contentReady;
     enter(code, pid);
   } catch { setErr("Couldn’t reach the server. Check your connection and try again."); }
   ui.busy = false; render();
@@ -535,6 +558,7 @@ async function joinRoom(){
       pid = rid();
       await T.update(code, {[`players/${pid}`]:{name, av:avi, at:Date.now(), seen:Date.now()}});
     }
+    await contentReady;
     enter(code, pid);
   } catch { setErr("Couldn’t reach the server. Check your connection and try again."); }
   ui.busy = false; render();
@@ -1098,11 +1122,12 @@ function render(){
 }
 
 /* ---------------- boot ---------------- */
-(function boot(){
+const contentReady = loadContent();
+(async function boot(){
   sweepMine();
   const q = new URLSearchParams(location.search).get("room");
   let saved = null; try { saved = JSON.parse(sessionStorage.getItem("cg:me")); } catch {}
-  if (saved && saved.code && (!q || q.toUpperCase() === saved.code)){ me = saved; ui.mode = "room"; connect(); }
+  if (saved && saved.code && (!q || q.toUpperCase() === saved.code)){ await contentReady; me = saved; ui.mode = "room"; connect(); }
   else if (q){ ui.tab = "join"; ui.f.code = q.toUpperCase().slice(0, 4); }
   render();
   if (ui.mode === "landing" && ui.f.code) lookupRoom();

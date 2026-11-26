@@ -6,7 +6,7 @@ Live site: https://triniswinburn.github.io/open-tabs/
 
 Flow: lobby, topic vote, warm-up (this or that), deep dive (cards and sparks), hot or not (rate statements from 1 to 5), closing (thank-you notes), summary.
 
-To add or change content, edit the `THEMES` list near the top of the script in `index.html`. Each theme has `pairs` (warm-up), `deep` (deep dive cards, 12 per theme) and `hot` (hot or not statements, 6 per theme, 5 are used).
+The content (themes, warm-up pairs, deep dive cards and hot or not statements) lives in `content.json`. The game loads it when it opens. `index.html` also keeps a copy as a fallback, used only if `content.json` can't be loaded or is invalid. Each theme has `pairs` (warm-up, 5), `deep` (deep dive cards, 12) and `hot` (hot or not statements, 6, of which 5 are used). Keep the theme `id` values unchanged.
 
 It's a single static file (`index.html`), so it runs on GitHub Pages. Real-time sync uses Firebase Realtime Database through its REST API (no SDK, no build step).
 
@@ -52,6 +52,24 @@ Open `index.html` in two tabs of the same browser. Host in one, join with the co
 2. Everyone else opens the invite link (or enters the 4-letter code).
 3. The host moves the group forward. Everyone votes, picks and writes from their own screen.
 4. In the deep dive, each card has one person with the turn. Only that person sees the buttons. The host has a separate "Host controls" row to skip ahead.
+
+## Monthly content refresh
+
+A GitHub Action (`.github/workflows/update-content.yml`) runs on the 1st of every month. It asks Claude for fresh cards, statements and pairs, replaces the oldest items in `content.json` and opens a pull request. Nothing goes live until you review and merge it.
+
+One-time setup:
+
+1. Add your Anthropic API key as a repository secret named `ANTHROPIC_API_KEY` (Settings, Secrets and variables, Actions).
+2. Turn on Settings, Actions, General, Workflow permissions, "Allow GitHub Actions to create and approve pull requests".
+
+Good to know:
+
+- To run it now, go to the Actions tab, pick "Monthly content refresh" and choose Run workflow.
+- Time-sensitive themes (AI at work, Tech we love, Hot takes) change more each month than the rest. Edit the `PLAN` table in `scripts/update-content.mjs` to change how many items rotate.
+- The script checks length, tone rules and duplicates. If a theme's new items fail the checks, that theme is skipped.
+- The script asks Claude to use web search for current trends. If web search isn't available for your account, it retries without it and relies on the model's own knowledge.
+- To test without calling the API: `node scripts/update-content.mjs --mock response.json`.
+- If the API key expires, the Action fails and you will see the error in the Actions tab.
 
 ## Notes
 

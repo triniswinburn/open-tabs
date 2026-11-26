@@ -1,0 +1,41 @@
+name: Monthly content refresh
+
+on:
+  schedule:
+    - cron: "0 14 1 * *"   # 1st of every month, 14:00 UTC
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate new content
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/update-content.mjs
+      - name: Open pull request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- content.json; then
+            echo "No changes to propose."
+            exit 0
+          fi
+          BRANCH="content-refresh-$(date +%Y-%m)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content.json
+          git commit -m "Monthly content refresh"
+          git push --force -u origin "$BRANCH"
+          gh pr create --base main --head "$BRANCH" \
+            --title "Monthly content refresh ($(date +%Y-%m))" \
+            --body-file pr-body.md || echo "A pull request for this branch may already exist."
