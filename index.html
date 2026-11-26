@@ -170,6 +170,26 @@ input.code{font-family:var(--display);font-weight:600;letter-spacing:.3em;text-t
 /* deep dive */
 .deephead{display:flex;justify-content:center;gap:14px;align-items:center;color:var(--muted);font-size:.9rem}
 .landed{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:26px;flex-wrap:wrap;font-size:1.05rem}
+.speaker{margin:22px auto 0;max-width:640px;padding:18px 22px 20px;border-radius:28px;background:rgba(255,255,255,.7);border:1px solid var(--line);text-align:center;transition:box-shadow .3s}
+.speaker.mine{background:#fff;border:2px solid var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent)}
+.slabel{display:inline-block;font-size:.8rem;font-weight:700;color:var(--accent)}
+.spkrow{display:flex;justify-content:center;align-items:center;gap:22px;flex-wrap:wrap;margin:12px 0 4px}
+.spk{display:flex;flex-direction:column;align-items:center;gap:6px}
+.spk b{font-family:var(--display);font-size:1.5rem;font-weight:600;letter-spacing:-.02em}
+.spk small{font-size:.75rem;font-weight:600;background:var(--accent);color:#fff;border-radius:999px;padding:2px 10px}
+.spk.sm{gap:3px}.spk.sm b{font-size:.85rem;font-family:var(--ui);font-weight:600}
+.stext{margin:8px 0 0;font-size:1.02rem}
+.speaker.mine .stext{font-weight:600}
+.dsteps{display:flex;justify-content:center;gap:8px;list-style:none;padding:0;margin:16px 0 0;font-size:.82rem;color:var(--muted);flex-wrap:wrap}
+.dsteps li{padding:4px 12px;border-radius:999px;border:1px solid var(--line)}
+.dsteps li.done{opacity:.55}
+.dsteps li.now{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stime{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.stime.over{color:#C2410C;font-weight:600}
+.stime:empty{display:none}
+.awaybar{display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;margin:0 auto;padding:10px 20px;background:#fff;border:1px solid var(--line);border-radius:999px;width:fit-content;max-width:92vw;font-size:.92rem}
+#away:empty{display:none}
+.hostbar{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;margin:28px auto 0;padding-top:14px;max-width:640px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--muted)}
 .qcard{margin:20px auto 0;max-width:820px;background:rgba(255,255,255,.88);border:1px solid var(--line);border-radius:36px;padding:clamp(28px,4vw,52px);text-align:center;backdrop-filter:blur(10px)}
 .qcard.drop{animation:drop .8s cubic-bezier(.2,.9,.25,1.05) both}
 .q{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,3.4vw,3rem);line-height:1.1;letter-spacing:-.025em;text-wrap:balance}
@@ -247,6 +267,7 @@ svg.cons .edge{fill:none;stroke:var(--accent);stroke-opacity:.55;stroke-linecap:
 <body data-stage="landing">
 <div class="wash" aria-hidden="true"><i></i><i></i></div>
 <header id="top"></header>
+<div id="away"></div>
 <main id="main"></main>
 <footer id="foot"></footer>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -265,54 +286,47 @@ const DEMO = !FIREBASE_URL;
 const THEMES = [
   {id:"ai", name:"AI at work", tag:"How we use it, and what we learn",
    pairs:[["AI writes the first draft","I write the first draft"],["Ask AI first","Search the web first"],["Trust the answer","Always double-check"],["AI for ideas","AI for boring tasks"],["Chat with AI","Automate with AI"]],
-   deep:["What is one task AI does for you now that you used to do by hand?","What is the best prompt or trick you have learned? Share it with us.","When did AI give you a wrong answer? How did you notice?","What would you never let AI do for you, even if it could?","Which AI tool do you use that most of us may not know?","How do you think AI will change your job in two years?","What is one thing you would automate tomorrow if you could?"]},
+   deep:["What is one task AI does for you now that you used to do by hand?","What is the best prompt or trick you have learned? Share it with us.","When did AI give you a wrong answer? How did you notice?","What would you never let AI do for you, even if it could?","Which AI tool do you use that most of us may not know?","How do you think AI will change your job in two years?","What is one thing you would automate tomorrow if you could?","What is a task you tried with AI that did not work at all?","How do you check that an AI answer is right?","What would make you trust AI more at work?","What is the most fun thing you have done with AI?","What is one AI skill you want to get better at?"],
+   hot:["Most AI agents today are impressive demos, not reliable products.","In five years, most first drafts of code, docs and designs will come from AI.","Open models will beat closed models for most business uses.","AI will make junior roles harder to find, not easier.","Rules and regulation will shape AI more than technology will.","We should always say when AI helped write something."]},
   {id:"tech", name:"Tech we love", tag:"Tools, gadgets and tricks",
    pairs:[["Dark mode","Light mode"],["Keyboard shortcuts","Mouse and menus"],["One big screen","Two or more screens"],["Early adopter","Wait for version two"],["Phone","Laptop"]],
-   deep:["What is the one app or tool you could not work without?","What is a keyboard shortcut or small trick that saves you time?","What is the best piece of tech you ever bought?","What old technology do you miss?","What new technology are you most excited about right now?","What tool did you try and then stop using? Why?","What is one tech trend you think is overhyped?"]},
+   deep:["What is the one app or tool you could not work without?","What is a keyboard shortcut or small trick that saves you time?","What is the best piece of tech you ever bought?","What old technology do you miss?","What new technology are you most excited about right now?","What tool did you try and then stop using? Why?","What is one tech trend you think is overhyped?","What gadget on your desk would you miss the most?","How do you use tech to stay focused?","What setting or feature do you think too few people use?","What is the best tech purchase you made for under 50 dollars?","What tool or app do you wish existed?"],
+   hot:["Most dashboards are built once and never used again.","Most companies should buy tools, not build them.","Real-time collaboration tools have made us worse at deep work.","Most security problems are people problems, not technical problems.","Dark mode is better for everything.","We have too many tools and not enough habits."]},
   {id:"lessons", name:"Lessons from work", tag:"Mistakes, fixes and what we learned",
    pairs:[["Learn by doing","Learn by watching"],["Move fast","Plan carefully"],["Ask for help early","Try alone first"],["Feedback right away","Feedback in writing"],["Learn from mistakes","Learn from wins"]],
-   deep:["What is a work mistake that taught you a lot?","What is the best advice you got early in your career?","When did asking for help change the result of a project?","Which project did not go as planned? What would you do differently?","What feedback was hard to hear but turned out to be right?","What would you tell a new teammate on their first day?","What is a skill you wish you had learned sooner?"]},
+   deep:["What is a work mistake that taught you a lot?","What is the best advice you got early in your career?","When did asking for help change the result of a project?","Which project did not go as planned? What would you do differently?","What feedback was hard to hear but turned out to be right?","What would you tell a new teammate on their first day?","What is a skill you wish you had learned sooner?","What is a habit that made you better at your job?","When did you say no, and it turned out to be the right call?","What did you learn from a teammate who is very different from you?","What is a lesson you keep having to learn again?","What would you do differently in your first year at work?"],
+   hot:["Technical debt is mostly a communication problem, not a code problem.","Estimating work in hours or points is mostly guessing.","A good prototype is worth more than a good spec.","Failing fast is only useful if you write down what you learned.","Most project delays start in the first week.","The best feedback is a little uncomfortable."]},
   {id:"learn", name:"Learning and skills", tag:"How we keep growing",
    pairs:[["Video course","Book or article"],["Go deep on one thing","Learn many things a little"],["Learn alone","Learn in a group"],["Teach others","Learn from others"],["Short daily practice","Long focused sessions"]],
-   deep:["What is the last thing you learned that made you proud?","What is the best course, book, video or podcast you found for work?","What skill do you want to learn this year?","How do you learn something new fast?","Who at work taught you something important?","What do you know well enough to teach in ten minutes?","What topic could you read about for hours?"]},
+   deep:["What is the last thing you learned that made you proud?","What is the best course, book, video or podcast you found for work?","What skill do you want to learn this year?","How do you learn something new fast?","Who at work taught you something important?","What do you know well enough to teach in ten minutes?","What topic could you read about for hours?","What is something you taught yourself that surprised you?","What is the hardest thing you have learned so far?","What do you do when you feel stuck while learning?","Which mentor or teacher do you still think about?","What would you learn if you had a month off?"],
+   hot:["Most work training is a waste of time.","You learn more from a bad project than from a good course.","Everyone at work should learn a little coding.","Writing well will matter more than coding well in ten years.","Teaching a topic is the fastest way to learn it.","A portfolio of real work matters more than certificates."]},
   {id:"hot", name:"Hot takes", tag:"Strong opinions about work and tech",
    pairs:[["Shorter meetings","Meetings are fine"],["Camera on","Camera optional"],["Email","Chat"],["Remote first","Office first"],["Documents","Slides"]],
-   deep:["What is a work opinion that many people disagree with?","Which tech trend do you think is overhyped?","What meeting habit would you remove today?","What is one rule at work that you would change?","What did you change your mind about in the last year?","What is the best way to give feedback, in your view?","Which buzzword would you ban?"]},
+   deep:["What is a work opinion that many people disagree with?","Which tech trend do you think is overhyped?","What meeting habit would you remove today?","What is one rule at work that you would change?","What did you change your mind about in the last year?","What is the best way to give feedback, in your view?","Which buzzword would you ban?","What popular work advice do you think is wrong?","What small thing annoys you at work?","What tradition at work would you happily end?","What trend do you secretly like, even if it is not cool?","What is the most overrated skill at work?"],
+   hot:["Most meetings should be an email.","Cameras on make meetings better.","Product teams ship too many features and fix too few problems.","Slides are a bad way to share ideas.","Open-plan offices are bad for focus.","Chat is where good ideas go to disappear."]},
   {id:"adventure", name:"Adventures", tag:"Trips, challenges and new places",
    pairs:[["Beach","Mountains"],["Plan every detail","Go with the flow"],["Big city trip","Nature trip"],["Try the local food","Find food you know"],["Travel alone","Travel with a group"]],
-   deep:["What is the best trip you have ever taken?","What is the most unusual place you have visited?","What is one place you really want to see?","What is the most adventurous thing you have done?","What is the best travel tip you can share?","What food did you try while traveling that surprised you?","If our team could take a trip together, where would you go?"]},
+   deep:["What is the best trip you have ever taken?","What is the most unusual place you have visited?","What is one place you really want to see?","What is the most adventurous thing you have done?","What is the best travel tip you can share?","What food did you try while traveling that surprised you?","If our team could take a trip together, where would you go?","What is your favorite place to go back to?","What was your biggest travel mishap?","What would you pack if you could only take one bag?","What is the best meal you had on a trip?","What local custom did you love discovering?"],
+   hot:["Planning a trip is half the fun.","The best trips are the ones that go wrong.","Solo travel teaches you more than group travel.","Staying in one place beats visiting five cities in five days.","Tourist spots are popular for a reason.","Everyone should live in another country for a year."]},
   {id:"recs", name:"Recommendations", tag:"Books, shows, podcasts and more",
    pairs:[["Book","Movie"],["Podcast","Playlist"],["Binge a series","Watch one film"],["Read the book first","Watch the movie first"],["Audiobook","Paper book"]],
-   deep:["What book would you recommend to this team?","What podcast or channel do you follow, for work or for fun?","What show or movie did you enjoy lately?","What is a game you love?","What is the best thing you read or watched this year?","What music or playlist helps you focus?","What small app or website do you think everyone should know?"]},
+   deep:["What book would you recommend to this team?","What podcast or channel do you follow, for work or for fun?","What show or movie did you enjoy lately?","What is a game you love?","What is the best thing you read or watched this year?","What music or playlist helps you focus?","What small app or website do you think everyone should know?","What song do you never skip?","What book have you read more than once?","What documentary or video taught you something new?","What is a hidden gem you want more people to know about?","What do you watch or listen to when you need to relax?"],
+   hot:["The book is almost always better than the movie.","Most series should end one season earlier.","Audiobooks count as reading.","Background music helps you focus.","Nobody needs more than one streaming service.","Rewatching your favorites beats trying something new."]},
   {id:"ideas", name:"Ideas and innovation", tag:"What if, and what is next",
    pairs:[["Big idea, long time","Small idea, fast"],["Invent something new","Improve something old"],["Brainstorm together","Think alone first"],["Prototype first","Research first"],["Follow the data","Follow your instinct"]],
-   deep:["What problem at work would you love to solve?","If you had a free week to build anything, what would you build?","Which product or service do you think is really well designed?","Which process on our team could be much simpler?","Which technology do you think will change the world in ten years?","What is a bold idea you have never shared?","What would help our team work better together?"]}
-];
-const HOT = [
-  "Most AI agents today are impressive demos, not reliable products.",
-  "In five years, most first drafts of code, docs and designs will come from AI.",
-  "Open models will beat closed models for most business uses.",
-  "Most dashboards are built once and never used again.",
-  "Technical debt is mostly a communication problem, not a code problem.",
-  "A good prototype is worth more than a good spec.",
-  "Estimating work in hours or points is mostly guessing.",
-  "Most companies should buy tools, not build them.",
-  "AI will make junior roles harder to find, not easier.",
-  "Rules and regulation will shape AI more than technology will.",
-  "Product teams ship too many features and fix too few problems.",
-  "Most security problems are people problems, not technical problems.",
-  "Writing well will matter more than coding well in ten years.",
-  "Real-time collaboration tools have made us worse at deep work."
+   deep:["What problem at work would you love to solve?","If you had a free week to build anything, what would you build?","Which product or service do you think is really well designed?","Which process on our team could be much simpler?","Which technology do you think will change the world in ten years?","What is a bold idea you have never shared?","What would help our team work better together?","What is the best idea you ever had that went nowhere?","What everyday thing would you redesign?","Who is the most creative person you know? What do they do?","What would you invent to make Mondays better?","What idea from another industry could we borrow?"],
+   hot:["Constraints make people more creative, not less.","Thinking alone first beats brainstorming as a group.","Most good ideas are small improvements, not big inventions.","The best ideas sound obvious once someone says them.","Following the data too closely kills bold ideas.","Every team should get a free week each quarter to try wild ideas."]}
 ];
 const HOT_N = 5;
 const THEME = id => THEMES.find(t => t.id === id);
-const ROUNDS = 6, MODES = ["spark","spark","pair","spark","all","spark"];
+const ROUNDS = 6, MODES = ["spark","spark","spark","spark","all","spark"];
+const LATE_OK = new Set(["lobby","vote","reveal","warmup"]);
 const MODE = {
   spark:{label:"Spark", hint:"Answer, then pass the spark to someone with a follow-up question."},
-  pair:{label:"Pair up", hint:"Answer together or take turns. Everyone else, listen for something to ask later."},
   all:{label:"Everyone", hint:"One sentence each. Whoever finishes picks the next voice."}
 };
 const STAGES = [["lobby","Lobby"],["vote","Vote"],["warmup","Warm-up"],["deep","Deep dive"],["hot","Hot or not"],["closing","Closing"]];
+const STAGE_MIN = {vote:5, reveal:5, warmup:7, deep:15, hot:8, closing:5};
 const STAGE_IDX = {lobby:0,vote:1,reveal:1,warmup:2,deep:3,hot:4,closing:5,end:6};
 const ANIMALS = [
   {name:"Fox", color:"#FFD6B0", svg:'<path d="M4 5.5 12 10.5h8l8-5L27 19.5C26 26.5 21 28.5 16 28.5S6 26.5 5 19.5Z"/><path d="M6.8 9.2l3 2M25.2 9.2l-3 2"/><circle cx="11.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><circle cx="20.5" cy="17" r="1.2" fill="#1C1A2B" stroke="none"/><ellipse cx="16" cy="22.4" rx="1.7" ry="1.2" fill="#1C1A2B"/><path d="M13.2 26c1.2.9 2.2.9 2.8-.9.6 1.8 1.6 1.8 2.8.9"/>'},
@@ -385,6 +399,7 @@ function demoTransport(){
   const read = c => { try { return JSON.parse(localStorage.getItem(key(c))); } catch { return null; } };
   return {
     async get(c){ return read(c); },
+    async remove(c){ localStorage.removeItem(key(c)); },
     async update(c, u){ localStorage.setItem(key(c), JSON.stringify(applyUpdates(read(c), u))); },
     subscribe(c, cb){
       const h = e => { if (e.key === key(c)) cb(read(c)); };
@@ -398,6 +413,7 @@ function fbTransport(base){
   const url = c => `${base}/rooms/${c}.json`;
   return {
     async get(c){ const r = await fetch(url(c)); if (!r.ok) throw new Error("net"); return r.json(); },
+    async remove(c){ const r = await fetch(url(c), {method:"DELETE"}); if (!r.ok) throw new Error("net"); },
     async update(c, u){
       const r = await fetch(url(c), {method:"PATCH", headers:{"Content-Type":"application/json"}, body:JSON.stringify(u)});
       if (!r.ok) throw new Error("net");
@@ -434,17 +450,32 @@ const chip = (p, cls = "") => `<span class="pchip ${cls}" title="${animalName(p.
 const chipId = (id, cls = "") => P(id) ? chip({id, ...P(id)}, cls) : "";
 const tallies = () => { const t = {}; for (const v of Object.values(S?.votes || {})) for (const k of Object.keys(v || {})) t[k] = (t[k] || 0) + 1; return t; };
 const myVotes = () => Object.keys(S?.votes?.[me.pid] || {});
-const hotOrder = () => shuffle(HOT.map((_, i) => i), seeded(me.code + "hot"));
+const hotOrder = () => shuffle(THEME(S.theme).hot.map((_, i) => i), seeded(me.code + S.theme + "hot"));
 const deepOrder = () => { const th = THEME(S.theme); return shuffle(th.deep.map((_, i) => i), seeded(me.code + S.theme)); };
+const canSwap = () => { const d = S.deep, n = THEME(S.theme).deep.length; return n - 1 - (d.qi + 1) >= ROUNDS - 1 - d.r; };
 const deepQ = qi => { const th = THEME(S.theme), o = deepOrder(); return th.deep[o[qi % o.length]]; };
 
 function commit(updates){
+  if (updates.stage && STAGE_IDX[updates.stage] !== STAGE_IDX[S?.stage]) updates = {...updates, stageAt:Date.now(), ...(updates.stage === "end" ? {endedAt:Date.now()} : {})};
   S = applyUpdates(S, updates);
   render();
   T.update(me.code, updates).catch(() => toast("Connection hiccup. Check your network."));
 }
 
 /* ---------------- room lifecycle ---------------- */
+const ROOM_TTL = 24 * 3600 * 1000;
+function sweepMine(){
+  let mine = []; try { mine = JSON.parse(localStorage.getItem("cg:mine")) || []; } catch {}
+  const old = mine.filter(r => Date.now() - r.t > ROOM_TTL);
+  if (!old.length) return;
+  localStorage.setItem("cg:mine", JSON.stringify(mine.filter(r => !old.includes(r))));
+  old.forEach(r => T.remove(r.code).catch(() => {}));
+}
+function rememberRoom(code){
+  let mine = []; try { mine = JSON.parse(localStorage.getItem("cg:mine")) || []; } catch {}
+  mine.push({code, t:Date.now()});
+  localStorage.setItem("cg:mine", JSON.stringify(mine.slice(-20)));
+}
 const CODE_CHARS = "BCDFGHJKLMNPQRSTVWXZ";
 const makeCode = () => Array.from({length:4}, () => CODE_CHARS[Math.floor(Math.random() * CODE_CHARS.length)]).join("");
 const inviteLink = () => location.href.split(/[?#]/)[0] + "?room=" + me.code;
@@ -459,7 +490,7 @@ async function lookupRoom(){
     if (seq !== lookupSeq) return;
     const ok = !!(room && room.hostId);
     ui.taken = ok ? Object.values(room.players || {}).map(p => p.av) : [];
-    ui.room = {code, ok};
+    ui.room = {code, ok, started: ok && !LATE_OK.has(room.stage)};
     if (ui.taken.includes(ui.form.av)) ui.form.av = ALL_AV.find(i => !ui.taken.includes(i)) ?? ui.form.av;
     render();
   } catch {}
@@ -473,6 +504,7 @@ async function createRoom(){
     for (let i = 0; i < 8; i++){ if (!(await T.get(code))) break; code = makeCode(); }
     const pid = rid();
     await T.update(code, {hostId:pid, expected:ui.form.expected, stage:"lobby", created:Date.now(), players:{[pid]:{name:f.name.trim().slice(0, 20), av:ui.form.av, at:Date.now(), seen:Date.now()}}});
+    rememberRoom(code);
     enter(code, pid);
   } catch { setErr("Couldn’t reach the server. Check your connection and try again."); }
   ui.busy = false; render();
@@ -490,6 +522,7 @@ async function joinRoom(){
     let pid;
     if (again){ pid = again[0]; await T.update(code, {[`players/${pid}/seen`]:Date.now()}); }
     else {
+      if (!LATE_OK.has(room.stage)){ setErr("This session already started, so new people can’t join. Ask your host to start a new room."); ui.busy = false; return render(); }
       if (ps.length >= 18){ setErr("This room is full (18 people)."); ui.busy = false; return render(); }
       const taken = ps.map(([, p]) => p.av);
       if (taken.includes(ui.form.av)){
@@ -563,25 +596,23 @@ function pickPeople(n, exclude = []){
 }
 function roundUpdates(r, qi){
   if (r >= ROUNDS) return {stage:"hot", h:{i:0, revealed:false}};
-  let mode = MODES[r % MODES.length];
-  if (mode === "pair" && players().length < 2) mode = "spark";
+  const mode = MODES[r % MODES.length];
   const d = {r, qi, mode, phase:"answer"};
   const u = {};
   if (mode === "all"){ u.deep = d; return u; }
-  const ids = pickPeople(mode === "pair" ? 2 : 1);
+  const ids = pickPeople(1);
   d.turn = ids[0];
   u[`spoken/${ids[0]}`] = (S.spoken?.[ids[0]] || 0) + 1;
-  if (mode === "pair" && ids[1]){
-    d.partner = ids[1];
-    u[`spoken/${ids[1]}`] = (S.spoken?.[ids[1]] || 0) + 1;
-    u[`links/${rid("l")}`] = {from:ids[0], to:ids[1], kind:"pair"};
-  }
   u.deep = d;
   return u;
 }
-const canAct = () => { const d = S.deep; return isHost() || (d.mode !== "all" && (me.pid === d.turn || me.pid === d.partner)); };
+const canAct = () => { const d = S.deep; return isHost() || (d.mode !== "all" && me.pid === d.turn); };
 
+const HOST_ONLY = new Set(["start","reveal","toWarm","showRes","nextPair","showHot","nextHot","toClosing","toHot","finish","deleteRoom"]);
+const DEEP_ONLY = new Set(["toPass","sendPass","swap","next"]);
 function act(a, arg){
+  if (me.code && HOST_ONLY.has(a) && !isHost()) return;
+  if (me.code && DEEP_ONLY.has(a) && !(S?.stage === "deep" && canAct())) return;
   switch (a){
     case "tab": ui.tab = arg; ui.err = ""; render(); if (arg === "join") lookupRoom(); break;
     case "av": if (ui.tab === "join" && ui.taken.includes(+arg)) break; ui.form.av = +arg; render(); break;
@@ -612,7 +643,7 @@ function act(a, arg){
       commit({"deep/turn":to, "deep/phase":"follow", "deep/follow":{from:d.turn, text}, [`spoken/${to}`]:(S.spoken?.[to] || 0) + 1, [`links/${rid("l")}`]:{from:d.turn, to, kind:"spark", ask:text ? 1 : 0}});
       break;
     }
-    case "swap": commit({"deep/qi":S.deep.qi + 1}); break;
+    case "swap": if (!canSwap()) break; commit({"deep/qi":S.deep.qi + 1}); break;
     case "next": ui.target = null; commit(roundUpdates(S.deep.r + 1, S.deep.qi + 1)); break;
     case "toHot": commit({stage:"hot", h:{i:0, revealed:false}}); break;
     case "rate": if (!S.h?.revealed) commit({[`rates/q${S.h.i}/${me.pid}`]:+arg}); break;
@@ -630,6 +661,13 @@ function act(a, arg){
       break;
     }
     case "finish": commit({stage:"end"}); break;
+    case "claimHost": if (!isHost() && !present(S.hostId)){ commit({hostId:me.pid}); toast("You are the host now"); } break;
+    case "deleteRoom": {
+      if (!confirm("Delete this room and all its data for everyone?")) break;
+      const code = me.code; if (unsub) unsub(); unsub = null;
+      T.remove(code).then(() => leave("Room deleted.")).catch(() => { toast("Couldn’t delete the room. Try again."); connect(); });
+      break;
+    }
     case "copySummary": copy(summaryText()); toast("Summary copied"); break;
   }
 }
@@ -736,7 +774,7 @@ function viewLanding(fresh){
         <button role="tab" class="${host ? "on" : ""}" data-act="tab" data-arg="host">Host a session</button>
         <button role="tab" class="${host ? "" : "on"}" data-act="tab" data-arg="join">Join with a code</button>
       </div>
-      ${host ? "" : `<label>Room code<input type="text" class="code" data-keep="code" maxlength="4" value="${esc(f.code)}" autocomplete="off" placeholder="ABCD">${ui.room && ui.room.code === f.code.trim().toUpperCase() ? `<span class="hintline">${ui.room.ok ? "Room found. Animals that are taken are dimmed." : "We couldn’t find a room with this code."}</span>` : ""}</label>`}
+      ${host ? "" : `<label>Room code<input type="text" class="code" data-keep="code" maxlength="4" value="${esc(f.code)}" autocomplete="off" placeholder="ABCD">${ui.room && ui.room.code === f.code.trim().toUpperCase() ? `<span class="hintline">${!ui.room.ok ? "We couldn’t find a room with this code." : ui.room.started ? "This session already started. Only people who were already in it can rejoin." : "Room found. Animals that are taken are dimmed."}</span>` : ""}</label>`}
       <label>Your name<input type="text" data-keep="name" maxlength="20" value="${esc(f.name)}" autocomplete="off" placeholder="How should we call you?"></label>
       ${host ? `<div class="lbl">How many people are playing?<div class="stepper"><button data-act="exp" data-arg="-1" aria-label="Fewer people">−</button><output>${ui.form.expected}</output><button data-act="exp" data-arg="1" aria-label="More people">+</button></div></div>` : ""}
       <div class="lbl">Pick your animal<div class="avs">${ANIMALS.map((a, i) => { const tk = !host && ui.taken.includes(i); return `<button class="${ui.form.av === i ? "on" : ""} ${tk ? "taken" : ""}" data-act="av" data-arg="${i}" aria-pressed="${ui.form.av === i}" ${tk ? "disabled" : ""} title="${tk ? a.name + " is already taken" : a.name}">${av(i, 34)}<span>${tk ? "Taken" : a.name}</span></button>`; }).join("")}</div><span class="you">You’re the ${animalName(ui.form.av)}.</span></div>
@@ -860,51 +898,60 @@ function viewWarmup(fresh){
 }
 
 function viewDeep(fresh){
-  const d = S.deep, q = deepQ(d.qi), m = MODE[d.mode], can = canAct(), ps = players();
-  const last = d.r >= ROUNDS - 1;
-  let landed = "", body = "", actions = "", hint = m.hint;
-  const key = d.mode === "all" ? "" : "drop";
+  const d = S.deep, q = deepQ(d.qi), m = MODE[d.mode], ps = players();
+  const last = d.r >= ROUNDS - 1, host = isHost();
+  const meTurn = me.pid === d.turn;
+  const actor = d.mode === "all" ? host : meTurn;
+  const swapBtn = canSwap() ? '<button class="btn ghost" data-act="swap">Get a new card</button>' : "";
+  const nextLbl = last ? "Go to Hot or not" : "Done, next card";
+  const spk = (id, sm) => `<div class="spk ${sm ? "sm" : ""}">${av(P(id)?.av ?? 0, sm ? 40 : 72)}<b>${nm(id)}</b>${id === me.pid ? "<small>You</small>" : ""}</div>`;
+  let label, who, text, mine = false, body = `<p class="q">${esc(q)}</p>`, actions = "", steps = "";
   if (d.mode === "all"){
-    landed = `<span>This one’s for everyone.</span>`;
-    body = `<p class="q">${esc(q)}</p>`;
-    actions = isHost() ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Next card"}</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">${nm(S.hostId)} moves to the next card.</p>`;
+    label = "Everyone answers";
+    who = ps.map(p => spk(p.id, true)).join("");
+    text = "One sentence each. Whoever finishes picks the next voice.";
+    actions = host ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Next card"}</button>${swapBtn}` : "";
   } else if (d.phase === "answer"){
-    landed = d.mode === "pair"
-      ? `${chipId(d.turn, "on")}<span>and</span>${chipId(d.partner, "on")}<span>this one’s for you.</span>`
-      : `${chipId(d.turn, "on")}<span>this one’s for you.</span>`;
-    body = `<p class="q">${esc(q)}</p>`;
-    if (d.mode === "pair") actions = can ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Done, next card"}</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">Listening in…</p>`;
-    else actions = can ? `<button class="btn" data-act="toPass">Pass the spark</button><button class="btn ghost" data-act="swap">Get a new card</button>` : `<p class="wait">Listening to ${nm(d.turn)}…</p>`;
+    mine = meTurn;
+    label = "Answering now";
+    who = spk(d.turn);
+    text = meTurn ? "Your turn. Answer out loud, then pass the spark." : `Listen to ${nm(d.turn)}. The spark may come to you next.`;
+    actions = meTurn ? `<button class="btn" data-act="toPass">Pass the spark</button>${swapBtn}` : "";
   } else if (d.phase === "pass"){
-    landed = `${chipId(d.turn, "on")}<span>is choosing who gets the spark.</span>`;
-    body = `<p class="q">${esc(q)}</p>`;
-    if (can){
+    mine = meTurn; label = "Choosing who goes next";
+    who = spk(d.turn);
+    text = meTurn ? "Pick someone you want to hear more from." : `${nm(d.turn)} is choosing. It could be you.`;
+    if (meTurn){
       const others = ps.filter(p => p.id !== d.turn);
       actions = `<div class="passbox"><div class="passgrid">${others.map(p => `<button class="pchip ${ui.target === p.id ? "pick" : ""} ${present(p.id) ? "" : "off"}" data-act="target" data-arg="${p.id}">${av(p.av, 22)}<span>${esc(p.name)}</span></button>`).join("")}</div>
         <label>Add a follow-up question (optional)<textarea data-keep="follow" maxlength="160" placeholder="For example: how did you solve it?">${esc(ui.f.follow)}</textarea></label>
         <div class="actions" style="margin-top:0"><button class="btn" data-act="sendPass" ${ui.target ? "" : "disabled"}>Pass the spark</button></div></div>`;
-      hint = "Pick someone you want to hear more from.";
-    } else actions = `<p class="wait">Please wait…</p>`;
+    }
   } else {
     const f = d.follow || {};
-    landed = `<span>${nm(f.from)} passed the spark to</span>${chipId(d.turn, "on")}`;
+    mine = meTurn; label = `${f.from ? esc(P(f.from)?.name || "Someone") : "Someone"} passed the spark to`;
+    who = spk(d.turn);
+    text = meTurn ? "The spark is yours. Answer out loud." : `Listen to ${nm(d.turn)}. Keep your questions for later.`;
     body = `<p class="q small">${esc(q)}</p><p class="q">${f.text ? "“" + esc(f.text) + "”" : "What’s your take?"}</p>`;
-    actions = can ? `<button class="btn" data-act="next">${last ? "Go to Hot or not" : "Done, next card"}</button>` : `<p class="wait">Listening to ${nm(d.turn)}…</p>`;
-    hint = "Everyone else, keep your questions for later.";
+    actions = meTurn ? `<button class="btn" data-act="next">${nextLbl}</button>` : "";
   }
+  if (d.mode === "spark"){
+    const order = ["answer", "pass", "follow"], names3 = ["Answer", "Pass the spark", "Follow-up"], cur = order.indexOf(d.phase);
+    steps = `<ol class="dsteps" aria-label="Steps in this card">${names3.map((n, i) => `<li class="${i < cur ? "done" : i === cur ? "now" : ""}">${n}</li>`).join("")}</ol>`;
+  }
+  const hostbar = host ? `<div class="hostbar"><span>Host controls</span>${actor ? "" : `<button class="btn ghost sm" data-act="next">Skip to next card</button>${swapBtn.replace("btn ghost","btn ghost sm").replace("Get a new card","New card")}`}<button class="linkbtn" data-act="toHot">Skip to Hot or not</button></div>` : "";
   return `<div class="wrap center">
     <div class="deephead"><span class="pill">${m.label}</span><span>Card ${d.r + 1} of ${ROUNDS}</span></div>
-    <div class="landed">${landed}</div>
-    <article class="qcard ${fresh ? key : ""}">${body}</article>
-    <p class="hint">${hint}</p>
+    <div class="speaker ${mine ? "mine" : ""}"><span class="slabel">${label}</span><div class="spkrow">${who}</div><p class="stext">${text}</p>${steps}</div>
+    <article class="qcard ${fresh ? (d.mode === "all" ? "" : "drop") : ""}">${body}</article>
     <div class="actions">${actions}</div>
-    ${isHost() ? `<div class="actions" style="margin-top:6px"><button class="linkbtn" data-act="toHot">Skip to Hot or not</button></div>` : ""}
+    ${hostbar}
   </div>`;
 }
 
 function names(list){ const n = list.map(p => esc(p.name)); return n.length < 2 ? n.join("") : n.slice(0, -1).join(", ") + " and " + n[n.length - 1]; }
 function viewHot(fresh){
-  const i = S.h?.i || 0, text = HOT[hotOrder()[i % HOT.length]], rs = S.rates?.[`q${i}`] || {}, revealed = !!S.h?.revealed, ps = players();
+  const i = S.h?.i || 0, text = THEME(S.theme).hot[hotOrder()[i % THEME(S.theme).hot.length]], rs = S.rates?.[`q${i}`] || {}, revealed = !!S.h?.revealed, ps = players();
   const mine = +rs[me.pid], rated = ps.filter(p => rs[p.id]).length;
   const vals = ps.filter(p => rs[p.id]).map(p => [p, +rs[p.id]]);
   const avg = vals.length ? vals.reduce((a, [, v]) => a + v, 0) / vals.length : 0;
@@ -963,7 +1010,7 @@ function viewEnd(fresh){
         <h1 class="h2" style="margin-top:14px">That’s a wrap.</h1>
         <p class="sub">${esc(th?.name || "")}: ${c.people} ${c.people === 1 ? "person" : "people"}, ${c.cards} ${c.cards === 1 ? "card" : "cards"}, ${c.sparks} ${c.sparks === 1 ? "spark" : "sparks"} passed and ${c.notes} thank-you ${c.notes === 1 ? "note" : "notes"}.</p>
         <div class="badges">${players().map(p => `<div class="badge">${av(p.av, 30)}<div><b>${esc(p.name)}</b> <span style="color:var(--muted);font-size:.82rem">the ${animalName(p.av)}</span><small>${b[p.id][0]}. ${b[p.id][1]}.</small></div></div>`).join("")}</div>
-        <div class="actions" style="justify-content:flex-start"><button class="btn" data-act="copySummary">Copy summary</button><button class="btn ghost" data-act="leave">Leave room</button></div>
+        <div class="actions" style="justify-content:flex-start"><button class="btn" data-act="copySummary">Copy summary</button><button class="btn ghost" data-act="leave">Leave room</button>${isHost() ? `<button class="linkbtn" data-act="deleteRoom">Delete room data</button>` : ""}</div>
       </div>
       ${constellation(300)}
     </div>
@@ -992,6 +1039,16 @@ function viewKey(){
   return [S.stage, S.w?.i, S.w?.revealed, S.h?.i, S.h?.revealed, d.r, d.qi, d.phase, d.turn].join("|");
 }
 
+function tickTime(){
+  const el = $("#stime"); if (!el) return;
+  const min = S && STAGE_MIN[S.stage];
+  if (!min || !S.stageAt){ el.textContent = ""; el.classList.remove("over"); return; }
+  const sec = Math.max(0, Math.floor((Date.now() - S.stageAt) / 1000));
+  el.textContent = `${Math.floor(sec / 60)}:${String(sec % 60).padStart(2, "0")} of ${min} min`;
+  el.classList.toggle("over", sec > min * 60);
+}
+setInterval(tickTime, 1000);
+
 /* ---------------- render ---------------- */
 function setHTML(el, html){
   if (el._h === html) return;
@@ -1015,17 +1072,26 @@ function render(){
   // header
   const idx = STAGE_IDX[stage] ?? -1;
   const steps = inRoom ? `<ol class="steps" aria-label="Session progress">${STAGES.map(([id, label], i) => `<li class="${i < idx ? "done" : i === idx ? "now" : ""}">${label}</li>`).join("")}</ol>` : "<div></div>";
-  const right = inRoom ? `<div class="right"><div class="meter"><span><i style="--p:${Math.round(meter() * 100)}%"></i></span>Team connection</div><button class="codechip" data-act="copyCode" title="Copy room code">Room <b>${esc(me.code)}</b></button></div>` : "<div></div>";
+  const right = inRoom ? `<div class="right"><span class="stime" id="stime"></span><div class="meter"><span><i style="--p:${Math.round(meter() * 100)}%"></i></span>Team connection</div><button class="codechip" data-act="copyCode" title="Copy room code">Room <b>${esc(me.code)}</b></button></div>` : "<div></div>";
   setHTML($("#top"), `<div class="brand"><svg width="30" height="24" viewBox="0 0 30 24" aria-hidden="true"><rect x="8" y="1.5" width="20" height="13" rx="4" fill="none" stroke="#1C1A2B" stroke-opacity=".3" stroke-width="1.4"/><rect x="4.5" y="5" width="20" height="13" rx="4" fill="#fff" stroke="#1C1A2B" stroke-opacity=".55" stroke-width="1.4"/><rect x="1" y="9" width="20" height="13" rx="4" style="fill:var(--accent);transition:fill .6s"/></svg>Open tabs</div>${steps}${right}`);
+
+  const away = inRoom && S.hostId !== me.pid && !present(S.hostId) && P(me.pid);
+  setHTML($("#away"), away ? `<div class="awaybar"><span>${nm(S.hostId)} seems to be away.</span><button class="btn sm" data-act="claimHost">Take over as host</button></div>` : "");
 
   // main
   setHTML($("#main"), ui.mode === "landing" ? viewLanding(fresh) : viewRoom(fresh));
   if (inRoom && S.stage === "reveal" && !(ui.revealedFor === S.revealAt || reduced) && ui.revealStarted !== S.revealAt) startReveal();
   if (inRoom && S.stage === "reveal" && reduced) ui.revealedFor = S.revealAt;
 
+  tickTime();
+  if (inRoom && S.stage === "deep" && S.deep.mode !== "all" && S.deep.phase !== "pass" && S.deep.turn === me.pid){
+    const k = [S.deep.r, S.deep.phase, S.deep.turn].join("|");
+    if (ui.notified !== k){ ui.notified = k; toast("It’s your turn"); }
+  }
+
   // footer
   if (inRoom){
-    const d = S.deep || {}, act = S.stage === "deep" ? (d.mode === "all" ? players().map(p => p.id) : [d.turn, d.partner].filter(Boolean)) : [];
+    const d = S.deep || {}, act = S.stage === "deep" ? (d.mode === "all" ? players().map(p => p.id) : [d.turn].filter(Boolean)) : [];
     const roster = players().map(p => chip(p, `${act.includes(p.id) ? "on" : ""} ${present(p.id) ? "" : "off"} ${p.id === me.pid ? "me" : ""}`).replace("</span></span>", `</span>${p.id === S.hostId ? " <small>host</small>" : ""}</span>`)).join("");
     setHTML($("#foot"), `<div class="roster">${roster}</div>${constellation(176)}`);
   } else setHTML($("#foot"), "");
@@ -1033,6 +1099,7 @@ function render(){
 
 /* ---------------- boot ---------------- */
 (function boot(){
+  sweepMine();
   const q = new URLSearchParams(location.search).get("room");
   let saved = null; try { saved = JSON.parse(sessionStorage.getItem("cg:me")); } catch {}
   if (saved && saved.code && (!q || q.toUpperCase() === saved.code)){ me = saved; ui.mode = "room"; connect(); }
