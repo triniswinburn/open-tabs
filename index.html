@@ -320,7 +320,7 @@ let THEMES = [   /* fallback copy. The live content is loaded from content.json 
 const HOT_N = 5;
 const THEME = id => THEMES.find(t => t.id === id);
 const ROUNDS = 6, MODES = ["spark","spark","spark","spark","all","spark"];
-const LATE_OK = new Set(["lobby","vote","reveal","warmup"]);
+const LATE_OK = new Set(["lobby","vote","reveal","warmup","deep","hot","closing"]);
 const MODE = {
   spark:{label:"Spark", hint:"Answer, then pass the spark to someone with a follow-up question."},
   all:{label:"Everyone", hint:"One sentence each. Whoever finishes picks the next voice."}
@@ -545,7 +545,7 @@ async function joinRoom(){
     let pid;
     if (again){ pid = again[0]; await T.update(code, {[`players/${pid}/seen`]:Date.now()}); }
     else {
-      if (!LATE_OK.has(room.stage)){ setErr("This session already started, so new people can’t join. Ask your host to start a new room."); ui.busy = false; return render(); }
+      if (!LATE_OK.has(room.stage)){ setErr("This session has already ended, so new people can’t join. Ask your host to start a new room."); ui.busy = false; return render(); }
       if (ps.length >= 18){ setErr("This room is full (18 people)."); ui.busy = false; return render(); }
       const taken = ps.map(([, p]) => p.av);
       if (taken.includes(ui.form.av)){
@@ -798,7 +798,7 @@ function viewLanding(fresh){
         <button role="tab" class="${host ? "on" : ""}" data-act="tab" data-arg="host">Host a session</button>
         <button role="tab" class="${host ? "" : "on"}" data-act="tab" data-arg="join">Join with a code</button>
       </div>
-      ${host ? "" : `<label>Room code<input type="text" class="code" data-keep="code" maxlength="4" value="${esc(f.code)}" autocomplete="off" placeholder="ABCD">${ui.room && ui.room.code === f.code.trim().toUpperCase() ? `<span class="hintline">${!ui.room.ok ? "We couldn’t find a room with this code." : ui.room.started ? "This session already started. Only people who were already in it can rejoin." : "Room found. Animals that are taken are dimmed."}</span>` : ""}</label>`}
+      ${host ? "" : `<label>Room code<input type="text" class="code" data-keep="code" maxlength="4" value="${esc(f.code)}" autocomplete="off" placeholder="ABCD">${ui.room && ui.room.code === f.code.trim().toUpperCase() ? `<span class="hintline">${!ui.room.ok ? "We couldn’t find a room with this code." : ui.room.started ? "This session has ended. Only people who were already in it can rejoin." : "Room found. Animals that are taken are dimmed."}</span>` : ""}</label>`}
       <label>Your name<input type="text" data-keep="name" maxlength="20" value="${esc(f.name)}" autocomplete="off" placeholder="How should we call you?"></label>
       ${host ? `<div class="lbl">How many people are playing?<div class="stepper"><button data-act="exp" data-arg="-1" aria-label="Fewer people">−</button><output>${ui.form.expected}</output><button data-act="exp" data-arg="1" aria-label="More people">+</button></div></div>` : ""}
       <div class="lbl">Pick your animal<div class="avs">${ANIMALS.map((a, i) => { const tk = !host && ui.taken.includes(i); return `<button class="${ui.form.av === i ? "on" : ""} ${tk ? "taken" : ""}" data-act="av" data-arg="${i}" aria-pressed="${ui.form.av === i}" ${tk ? "disabled" : ""} title="${tk ? a.name + " is already taken" : a.name}">${av(i, 34)}<span>${tk ? "Taken" : a.name}</span></button>`; }).join("")}</div><span class="you">You’re the ${animalName(ui.form.av)}.</span></div>

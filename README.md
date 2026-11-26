@@ -75,7 +75,7 @@ Good to know:
 
 - Timing: each stage shows a soft timer in the header (vote 5 min, warm-up 7, deep dive 15, hot or not 8, closing 5). It turns orange when the group goes over. Nothing moves on its own.
 - Host away: if the host has been gone for 2 minutes, anyone in the room sees "Take over as host".
-- Late joiners: new people can join until the warm-up ends. Once the deep dive starts, only people already in the room can rejoin.
+- Late joiners: new people can join at any point until the host finishes the session. They land on whatever step the group is on. After the session ends, only people already in the room can rejoin.
 - Deleting data: when the session ends, the host can choose "Delete room data". Rooms created from a browser are also deleted by that browser after 24 hours, the next time the site is opened there. Rooms that are never cleaned up can be removed from the Firebase console.
 - Data stored: first names, animal choice, votes, picks, follow-ups and notes.
 - Test the network beforehand if people join from a corporate network: it needs access to `*.firebaseio.com` and `fonts.googleapis.com`.
