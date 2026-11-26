@@ -8,10 +8,6 @@
       "tag": "How we use it, and what we learn",
       "pairs": [
         [
-          "AI writes the first draft",
-          "I write the first draft"
-        ],
-        [
           "Ask AI first",
           "Search the web first"
         ],
@@ -26,13 +22,13 @@
         [
           "Chat with AI",
           "Automate with AI"
+        ],
+        [
+          "One AI tool for everything",
+          "A different tool for each job"
         ]
       ],
       "deep": [
-        "What is one task AI does for you now that you used to do by hand?",
-        "What is the best prompt or trick you have learned? Share it with us.",
-        "When did AI give you a wrong answer? How did you notice?",
-        "What would you never let AI do for you, even if it could?",
         "Which AI tool do you use that most of us may not know?",
         "How do you think AI will change your job in two years?",
         "What is one thing you would automate tomorrow if you could?",
@@ -40,15 +36,19 @@
         "How do you check that an AI answer is right?",
         "What would make you trust AI more at work?",
         "What is the most fun thing you have done with AI?",
-        "What is one AI skill you want to get better at?"
+        "What is one AI skill you want to get better at?",
+        "Which AI task takes you longer to check than to do yourself?",
+        "If an AI agent joined our team, what job would you hand it first?",
+        "How has AI changed the way you review work from teammates?",
+        "What one rule would you set for how our team uses AI?"
       ],
       "hot": [
-        "Most AI agents today are impressive demos, not reliable products.",
-        "In five years, most first drafts of code, docs and designs will come from AI.",
-        "Open models will beat closed models for most business uses.",
         "AI will make junior roles harder to find, not easier.",
         "Rules and regulation will shape AI more than technology will.",
-        "We should always say when AI helped write something."
+        "We should always say when AI helped write something.",
+        "AI saves time on writing but costs time on reviewing.",
+        "Managing an AI agent is a lot like managing a new hire.",
+        "Small AI models will be enough for most of our daily tasks."
       ]
     },
     {
@@ -56,10 +56,6 @@
       "name": "Tech we love",
       "tag": "Tools, gadgets and tricks",
       "pairs": [
-        [
-          "Dark mode",
-          "Light mode"
-        ],
         [
           "Keyboard shortcuts",
           "Mouse and menus"
@@ -75,13 +71,13 @@
         [
           "Phone",
           "Laptop"
+        ],
+        [
+          "Notes app",
+          "Pen and paper"
         ]
       ],
       "deep": [
-        "What is the one app or tool you could not work without?",
-        "What is a keyboard shortcut or small trick that saves you time?",
-        "What is the best piece of tech you ever bought?",
-        "What old technology do you miss?",
         "What new technology are you most excited about right now?",
         "What tool did you try and then stop using? Why?",
         "What is one tech trend you think is overhyped?",
@@ -89,15 +85,19 @@
         "How do you use tech to stay focused?",
         "What setting or feature do you think too few people use?",
         "What is the best tech purchase you made for under 50 dollars?",
-        "What tool or app do you wish existed?"
+        "What tool or app do you wish existed?",
+        "What tool do you use in a way its makers probably did not plan?",
+        "What small tech annoyance would you fix for everyone tomorrow?",
+        "How do you keep your files and notes easy to find?",
+        "Which notification do you actually enjoy getting?"
       ],
       "hot": [
-        "Most dashboards are built once and never used again.",
-        "Most companies should buy tools, not build them.",
-        "Real-time collaboration tools have made us worse at deep work.",
         "Most security problems are people problems, not technical problems.",
         "Dark mode is better for everything.",
-        "We have too many tools and not enough habits."
+        "We have too many tools and not enough habits.",
+        "Foldable phones will never become normal.",
+        "Most apps send far too many notifications.",
+        "Talking to our devices will replace typing for many daily tasks."
       ]
     },
     {
@@ -127,8 +127,6 @@
         ]
       ],
       "deep": [
-        "What is a work mistake that taught you a lot?",
-        "What is the best advice you got early in your career?",
         "When did asking for help change the result of a project?",
         "Which project did not go as planned? What would you do differently?",
         "What feedback was hard to hear but turned out to be right?",
@@ -138,15 +136,17 @@
         "When did you say no, and it turned out to be the right call?",
         "What did you learn from a teammate who is very different from you?",
         "What is a lesson you keep having to learn again?",
-        "What would you do differently in your first year at work?"
+        "What would you do differently in your first year at work?",
+        "What did you once overbuild that you wish you had kept simple?",
+        "When did a clear handoff save a project, or a missing one hurt it?"
       ],
       "hot": [
-        "Technical debt is mostly a communication problem, not a code problem.",
-        "Estimating work in hours or points is mostly guessing.",
         "A good prototype is worth more than a good spec.",
         "Failing fast is only useful if you write down what you learned.",
         "Most project delays start in the first week.",
-        "The best feedback is a little uncomfortable."
+        "The best feedback is a little uncomfortable.",
+        "Most mistakes repeat because nobody reviews them together.",
+        "Clear ownership matters more than a clear plan."
       ]
     },
     {
@@ -176,8 +176,6 @@
         ]
       ],
       "deep": [
-        "What is the last thing you learned that made you proud?",
-        "What is the best course, book, video or podcast you found for work?",
         "What skill do you want to learn this year?",
         "How do you learn something new fast?",
         "Who at work taught you something important?",
@@ -187,15 +185,17 @@
         "What is the hardest thing you have learned so far?",
         "What do you do when you feel stuck while learning?",
         "Which mentor or teacher do you still think about?",
-        "What would you learn if you had a month off?"
+        "What would you learn if you had a month off?",
+        "How has AI changed the way you learn new things?",
+        "What skill do you use every day that you never formally learned?"
       ],
       "hot": [
-        "Most work training is a waste of time.",
-        "You learn more from a bad project than from a good course.",
         "Everyone at work should learn a little coding.",
         "Writing well will matter more than coding well in ten years.",
         "Teaching a topic is the fastest way to learn it.",
-        "A portfolio of real work matters more than certificates."
+        "A portfolio of real work matters more than certificates.",
+        "Knowing what to ask matters more than knowing the answer.",
+        "Learning with AI helps you finish faster but remember less."
       ]
     },
     {
@@ -203,10 +203,6 @@
       "name": "Hot takes",
       "tag": "Strong opinions about work and tech",
       "pairs": [
-        [
-          "Shorter meetings",
-          "Meetings are fine"
-        ],
         [
           "Camera on",
           "Camera optional"
@@ -222,12 +218,13 @@
         [
           "Documents",
           "Slides"
+        ],
+        [
+          "Long messages",
+          "Short messages"
         ]
       ],
       "deep": [
-        "What is a work opinion that many people disagree with?",
-        "Which tech trend do you think is overhyped?",
-        "What meeting habit would you remove today?",
         "What is one rule at work that you would change?",
         "What did you change your mind about in the last year?",
         "What is the best way to give feedback, in your view?",
@@ -236,15 +233,18 @@
         "What small thing annoys you at work?",
         "What tradition at work would you happily end?",
         "What trend do you secretly like, even if it is not cool?",
-        "What is the most overrated skill at work?"
+        "What is the most overrated skill at work?",
+        "Which best practice do you quietly ignore?",
+        "What work habit do you think AI will make less useful?",
+        "What is one thing your team should stop measuring?"
       ],
       "hot": [
-        "Most meetings should be an email.",
-        "Cameras on make meetings better.",
-        "Product teams ship too many features and fix too few problems.",
         "Slides are a bad way to share ideas.",
         "Open-plan offices are bad for focus.",
-        "Chat is where good ideas go to disappear."
+        "Chat is where good ideas go to disappear.",
+        "The AI hype will cool down within two years.",
+        "Status updates are mostly written for the writer, not the reader.",
+        "Every team should have one meeting free day each week."
       ]
     },
     {
@@ -274,7 +274,6 @@
         ]
       ],
       "deep": [
-        "What is the best trip you have ever taken?",
         "What is the most unusual place you have visited?",
         "What is one place you really want to see?",
         "What is the most adventurous thing you have done?",
@@ -285,15 +284,16 @@
         "What was your biggest travel mishap?",
         "What would you pack if you could only take one bag?",
         "What is the best meal you had on a trip?",
-        "What local custom did you love discovering?"
+        "What local custom did you love discovering?",
+        "What small detour on a trip turned into your best memory?"
       ],
       "hot": [
-        "Planning a trip is half the fun.",
         "The best trips are the ones that go wrong.",
         "Solo travel teaches you more than group travel.",
         "Staying in one place beats visiting five cities in five days.",
         "Tourist spots are popular for a reason.",
-        "Everyone should live in another country for a year."
+        "Everyone should live in another country for a year.",
+        "A trip without your phone would be a better trip."
       ]
     },
     {
@@ -301,10 +301,6 @@
       "name": "Recommendations",
       "tag": "Books, shows, podcasts and more",
       "pairs": [
-        [
-          "Book",
-          "Movie"
-        ],
         [
           "Podcast",
           "Playlist"
@@ -320,11 +316,13 @@
         [
           "Audiobook",
           "Paper book"
+        ],
+        [
+          "Read the reviews",
+          "Go in blind"
         ]
       ],
       "deep": [
-        "What book would you recommend to this team?",
-        "What podcast or channel do you follow, for work or for fun?",
         "What show or movie did you enjoy lately?",
         "What is a game you love?",
         "What is the best thing you read or watched this year?",
@@ -334,15 +332,17 @@
         "What book have you read more than once?",
         "What documentary or video taught you something new?",
         "What is a hidden gem you want more people to know about?",
-        "What do you watch or listen to when you need to relax?"
+        "What do you watch or listen to when you need to relax?",
+        "What video or article changed how you think about your work?",
+        "What game or show would you pick for our team to enjoy together?"
       ],
       "hot": [
-        "The book is almost always better than the movie.",
-        "Most series should end one season earlier.",
         "Audiobooks count as reading.",
         "Background music helps you focus.",
         "Nobody needs more than one streaming service.",
-        "Rewatching your favorites beats trying something new."
+        "Rewatching your favorites beats trying something new.",
+        "Long podcasts are better than short ones.",
+        "Playing games together is a great way for coworkers to bond."
       ]
     },
     {
@@ -372,8 +372,6 @@
         ]
       ],
       "deep": [
-        "What problem at work would you love to solve?",
-        "If you had a free week to build anything, what would you build?",
         "Which product or service do you think is really well designed?",
         "Which process on our team could be much simpler?",
         "Which technology do you think will change the world in ten years?",
@@ -383,15 +381,17 @@
         "What everyday thing would you redesign?",
         "Who is the most creative person you know? What do they do?",
         "What would you invent to make Mondays better?",
-        "What idea from another industry could we borrow?"
+        "What idea from another industry could we borrow?",
+        "What would you build if building cost almost nothing?",
+        "What idea would you test this week if nobody had to approve it?"
       ],
       "hot": [
-        "Constraints make people more creative, not less.",
-        "Thinking alone first beats brainstorming as a group.",
         "Most good ideas are small improvements, not big inventions.",
         "The best ideas sound obvious once someone says them.",
         "Following the data too closely kills bold ideas.",
-        "Every team should get a free week each quarter to try wild ideas."
+        "Every team should get a free week each quarter to try wild ideas.",
+        "Cheap prototypes have made big plans less useful.",
+        "The best idea in the room often comes from the quietest person."
       ]
     }
   ]
